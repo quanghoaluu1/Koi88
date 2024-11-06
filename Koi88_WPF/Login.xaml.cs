@@ -21,7 +21,7 @@ namespace Koi88_WPF
     /// </summary>
     public partial class Login : Window
     {
-        private IAccountRepository _accountRepository;
+        private readonly IAccountRepository _accountRepository;
         public Login()
         {
             InitializeComponent();

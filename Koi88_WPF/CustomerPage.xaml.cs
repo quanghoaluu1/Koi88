@@ -26,5 +26,10 @@ namespace Koi88_WPF
             InitializeComponent();
             this._accountId = accountId;
         }
+
+        private void ButtonNewBooking_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new NewBookingPage());
+        }
     }
 }

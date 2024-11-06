@@ -25,7 +25,7 @@ namespace Koi88_WPF
             InitializeComponent();
             _accountRepository = new AccountRepository();
             this._accountId = accountId;
-            Account account = _accountRepository.GetAccountByAccountID(_accountId);
+            Account account = _accountRepository.GetAccountByAccountId(_accountId);
             TextBlockWelcome.Text = "Welcome " + account.Lastname;
             int? role = account.RoleId;
             switch (role)

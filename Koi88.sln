@@ -5,11 +5,11 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Koi88_WPF", "Koi88_WPF\Koi88_WPF.csproj", "{5756A187-8896-4595-BB06-85FE482D8EAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koi88_BusinessObject", "Koi88_BusinessObject\Koi88_BusinessObject.csproj", "{FE1D2711-5402-49AD-BE4A-F437117288B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Koi88_BusinessObject", "Koi88_BusinessObject\Koi88_BusinessObject.csproj", "{FE1D2711-5402-49AD-BE4A-F437117288B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koi88_DAO", "Koi88_DAO\Koi88_DAO.csproj", "{9D70D686-5BEC-4C66-AF03-4762967273C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Koi88_DAO", "Koi88_DAO\Koi88_DAO.csproj", "{9D70D686-5BEC-4C66-AF03-4762967273C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koi88_Repository", "Koi88_Repository\Koi88_Repository.csproj", "{FD8C1413-892C-4FCD-AD9B-57093C511A35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Koi88_Repository", "Koi88_Repository\Koi88_Repository.csproj", "{FD8C1413-892C-4FCD-AD9B-57093C511A35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

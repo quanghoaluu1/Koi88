@@ -9,7 +9,7 @@
       Title="CustomerPage">
 
     <Grid>
-        <Button Name="ButtonNewBooking" Content="New Booking" HorizontalAlignment="Left" Margin="78,35,0,0" VerticalAlignment="Top" Height="55" Width="158"/>
+        <Button Name="ButtonNewBooking" Content="New Booking" HorizontalAlignment="Left" Margin="78,35,0,0" VerticalAlignment="Top" Height="55" Width="158" Click="ButtonNewBooking_Click"/>
         <Button x:Name="ButtonYourBooking" Content="Your Booking" HorizontalAlignment="Left" Margin="78,134,0,0" VerticalAlignment="Top" Height="56" Width="158"/>
         <Button x:Name="ButtonBookingHistory" Content="Booking History" HorizontalAlignment="Left" Margin="78,235,0,0" VerticalAlignment="Top" Height="63" Width="158"/>
         <Button x:Name="ButtonVariety" Content="Variety" HorizontalAlignment="Left" Margin="470,35,0,0" VerticalAlignment="Top" Height="55" Width="158"/>

@@ -20,7 +20,7 @@ namespace Koi88_Repository
             return _accountDAO.Instance.GetAccountByUsername(username);
         }
 
-        public Account GetAccountByAccountID(int id)
+        public Account GetAccountByAccountId(int id)
         {
             return _accountDAO.Instance.GetAccountByAccountID(id);
         }
