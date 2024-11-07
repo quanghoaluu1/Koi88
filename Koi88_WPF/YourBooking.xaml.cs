@@ -12,24 +12,32 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Koi88_Repository;
 
 namespace Koi88_WPF
 {
     /// <summary>
-    /// Interaction logic for CustomerPage.xaml
+    /// Interaction logic for YourBooking.xaml
     /// </summary>
-    public partial class CustomerPage : Page
+    public partial class YourBooking : Page
     {
         private int _accountId;
-        public CustomerPage(int accountId)
+        private IBookingRepository _bookingRepository;
+        public YourBooking(int accountId)
         {
             InitializeComponent();
             this._accountId = accountId;
+            _bookingRepository = new BookingRepository();
         }
 
-        private void ButtonNewBooking_Click(object sender, RoutedEventArgs e)
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new NewBookingPage(_accountId));
+            NavigationService.GoBack();
+        }
+
+        private void YourBooking_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            DataGridYourBooking.ItemsSource = _bookingRepository.GetBookingsByAccountId(_accountId);
         }
     }
 }

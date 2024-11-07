@@ -18,7 +18,8 @@
         <TextBox Name="TextBoxFullName" HorizontalAlignment="Left" Margin="10,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" RenderTransformOrigin="0.441,2.266"/>
 
         <Label Content="Phone Number" HorizontalAlignment="Left" Margin="216,117,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxPhoneNumber" HorizontalAlignment="Left" Margin="216,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30"/>
+        <TextBox Name="TextBoxPhoneNumber" HorizontalAlignment="Left" Margin="216,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" TextChanged="TextBoxPhoneNumber_TextChanged"/>
+        <TextBlock x:Name="TextBlockErrorPhoneNumber" HorizontalAlignment="Left" Margin="216,173,0,0" TextWrapping="Wrap" Visibility="Hidden" Foreground="Red" VerticalAlignment="Top"/>
 
         <Label Content="Email" HorizontalAlignment="Left" Margin="10,183,0,0" VerticalAlignment="Top"/>
         <TextBox Name="TextBoxEmail" HorizontalAlignment="Left" Margin="10,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" TextChanged="TextBoxEmail_TextChanged"/>
@@ -61,7 +62,8 @@
         <TextBlock Name="TextBlockErrorEnd" Foreground="Red" Visibility="Hidden" HorizontalAlignment="Left" Margin="608,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
         <Label Content="Estimate Cost" HorizontalAlignment="Left" Margin="450,318,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxEstimateCost" HorizontalAlignment="Left" Margin="447,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30"/>
+        <TextBox Name="TextBoxEstimateCost" HorizontalAlignment="Left" Margin="447,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" TextChanged="TextBoxEstimateCost_TextChanged"/>
+        <TextBlock Name="TextBlockErrorEstimateCost" HorizontalAlignment="Left" Margin="447,374,0,0" TextWrapping="Wrap" Visibility="Hidden" Foreground="Red" VerticalAlignment="Top"/>
 
         <Label Content="Hotel Accommodation" HorizontalAlignment="Left" Margin="633,318,0,0" VerticalAlignment="Top"/>
         <TextBox Name="TextBoxHotelAccommodation" HorizontalAlignment="Left" Margin="630,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30"/>
@@ -71,6 +73,7 @@
         <TextBox Name="TextBoxAdditionalInformation" HorizontalAlignment="Left" Margin="10,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Height="80"/>
 
         <Button Name="ButtonSubmit" Content="Submit Order" HorizontalAlignment="Center" Margin="0,405,0,0" VerticalAlignment="Top" Height="52" Width="142" Click="ButtonSubmit_OnClick"/>
+        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click"/>
 
 
     </Grid>

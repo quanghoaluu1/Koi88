@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Koi88_DAO
 {
@@ -37,6 +38,11 @@ namespace Koi88_DAO
             {
                 return false;
             }
+        }
+
+        public List<Booking> GetBookingsByAccountId(int accountId)
+        {
+            return _dbContext.Bookings.Include(b => b.Trip).Where(b => b.Customer.AccountId == accountId).ToList();
         }
     }
 }

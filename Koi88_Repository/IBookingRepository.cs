@@ -10,5 +10,6 @@ namespace Koi88_Repository
     public interface IBookingRepository
     {
         bool CreateBooking(Booking booking);
+        List<Booking> GetBookingsByAccountId(int accountId);
     }
 }

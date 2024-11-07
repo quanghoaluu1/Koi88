@@ -23,12 +23,14 @@ namespace Koi88_WPF
     /// </summary>
     public partial class NewBookingPage : Page
     {
+        private int _accountId;
         private IBookingRepository _bookingRepository;
-        public NewBookingPage()
+        public NewBookingPage(int accountId)
         {
             InitializeComponent();
             _bookingRepository = new BookingRepository();
- 
+            this._accountId = accountId;
+
         }
 
 
@@ -42,6 +44,11 @@ namespace Koi88_WPF
                 return;
             }
             string phone = TextBoxPhoneNumber.Text;
+            if (!IsValidPhoneNumber(phone))
+            {
+                MessageBox.Show("Invalid phone number format");
+                return;
+            }
             string? gender = ComboBoxGender.Text;
 
             string favouriteFarm = TextBoxFavouriteFarm.Text;
@@ -54,6 +61,11 @@ namespace Koi88_WPF
                 return;
             }
             decimal estimateCost = Decimal.Parse(TextBoxEstimateCost.Text);
+            if (!IsNum(TextBoxEstimateCost.Text))
+            {
+                MessageBox.Show("Please input number");
+                return;
+            }
             string hotelAccommodation = TextBoxHotelAccommodation.Text;
             string additionInformation = TextBoxAdditionalInformation.Text;
 
@@ -77,6 +89,7 @@ namespace Koi88_WPF
             if (_bookingRepository.CreateBooking(booking))
             {
                 MessageBox.Show("Booking created successfully");
+                NavigationService.Navigate(new YourBooking(_accountId));
             }
             else
             {
@@ -184,6 +197,16 @@ namespace Koi88_WPF
             return Regex.IsMatch(email, @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$");
         }
 
+
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            return Regex.IsMatch(phoneNumber, @"((^(\+84|84|0|0084){1})(3|5|7|8|9))+([0-9]{8})$");
+        }
+
+        private bool IsNum(string number)
+        {
+            return Regex.IsMatch(number, @"^\d*\.?\d*$");
+        }
         private void DatePickerStartDate_OnSelectedDateChanged(object? sender, SelectionChangedEventArgs e)
         {
             if (DatePickerStartDate.SelectedDate.HasValue)
@@ -215,5 +238,45 @@ namespace Koi88_WPF
                 }
             }
         }
+
+        private void TextBoxPhoneNumber_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (TextBoxPhoneNumber.Text.Length > 0)
+            {
+                if (!IsValidPhoneNumber(TextBoxPhoneNumber.Text))
+                {
+                    TextBlockErrorPhoneNumber.Visibility = Visibility.Visible;
+                    TextBlockErrorPhoneNumber.Text = "Invalid phone number format";
+                }
+                else
+                {
+                    TextBlockErrorPhoneNumber.Visibility = Visibility.Hidden;
+                }
+            }
+        }
+
+        private void TextBoxEstimateCost_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(TextBoxEstimateCost.Text.Length > 0)
+            {
+                if (!IsNum(TextBoxEstimateCost.Text))
+                {
+                    TextBlockErrorEstimateCost.Visibility = Visibility.Visible;
+                    TextBlockErrorEstimateCost.Text = "Please input number";
+                }
+                else
+                {
+                    TextBlockErrorEstimateCost.Visibility = Visibility.Hidden;
+                }
+            }
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }
+
+        
+    

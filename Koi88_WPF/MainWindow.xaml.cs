@@ -50,8 +50,6 @@ namespace Koi88_WPF
             
         }
 
-        
-
         private void ButtonLogout_OnClick_Click(object sender, RoutedEventArgs e)
         {
             Login login = new Login();
