@@ -89,7 +89,7 @@ namespace Koi88_WPF
             if (_bookingRepository.CreateBooking(booking))
             {
                 MessageBox.Show("Booking created successfully");
-                NavigationService.Navigate(new YourBooking(_accountId));
+                NavigationService.Navigate(new YourBookingPage(_accountId));
             }
             else
             {

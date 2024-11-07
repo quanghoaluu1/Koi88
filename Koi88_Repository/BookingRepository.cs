@@ -20,5 +20,10 @@ namespace Koi88_Repository
         {
             return _bookingDAO.Instance.GetBookingsByAccountId(accountId);
         }
+
+        public bool CancelBooking(int bookingId)
+        {
+            return _bookingDAO.Instance.CancelBooking(bookingId);
+        }
     }
 }

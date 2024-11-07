@@ -44,5 +44,24 @@ namespace Koi88_DAO
         {
             return _dbContext.Bookings.Include(b => b.Trip).Where(b => b.Customer.AccountId == accountId).ToList();
         }
+
+        public bool CancelBooking(int bookingId)
+        {
+            try
+            {
+                var booking = _dbContext.Bookings.SingleOrDefault(b => b.BookingId == bookingId);
+                if (booking != null)
+                {
+                    booking.Status = "Cancelled";
+                    _dbContext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
