@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Koi88_Repository\Koi88_Repository.csproj" />
+    <ProjectReference Include="..\Koi88_Service\Koi88_Service.csproj" />
   </ItemGroup>
 
 </Project>

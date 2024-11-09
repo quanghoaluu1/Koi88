@@ -1,20 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Koi88_BusinessObject;
-using Koi88_Repository;
+using Koi88_Service;
 
 namespace Koi88_WPF
 {
@@ -23,12 +11,14 @@ namespace Koi88_WPF
     /// </summary>
     public partial class NewBookingPage : Page
     {
-        private int _accountId;
-        private IBookingRepository _bookingRepository;
+        private readonly int _accountId;
+        private IBookingService _bookingService;
+        private IAccountService _accountService;
         public NewBookingPage(int accountId)
         {
             InitializeComponent();
-            _bookingRepository = new BookingRepository();
+            _bookingService = new BookingService();
+            _accountService = new AccountService();
             this._accountId = accountId;
 
         }
@@ -82,11 +72,14 @@ namespace Koi88_WPF
             booking.HotelAccommodation = hotelAccommodation;
             booking.Note = additionInformation;
 
+            Account account = _accountService.GetAccountByAccountId(_accountId);
+
+            booking.CustomerId = account.Customers.FirstOrDefault(c => c.AccountId.Equals(_accountId)).CustomerId;
             booking.BookingDate = DateOnly.FromDateTime(DateTime.Now);
             booking.Status = "Requested";
             booking.IsActive = true;
 
-            if (_bookingRepository.CreateBooking(booking))
+            if (_bookingService.CreateBooking(booking))
             {
                 MessageBox.Show("Booking created successfully");
                 NavigationService.Navigate(new YourBookingPage(_accountId));

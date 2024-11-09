@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Koi88_DAO", "Koi88_DAO\Koi8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Koi88_Repository", "Koi88_Repository\Koi88_Repository.csproj", "{FD8C1413-892C-4FCD-AD9B-57093C511A35}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koi88_Service", "Koi88_Service\Koi88_Service.csproj", "{8BE4D340-A58B-4CB7-8197-2F28F274B188}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FD8C1413-892C-4FCD-AD9B-57093C511A35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD8C1413-892C-4FCD-AD9B-57093C511A35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD8C1413-892C-4FCD-AD9B-57093C511A35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BE4D340-A58B-4CB7-8197-2F28F274B188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BE4D340-A58B-4CB7-8197-2F28F274B188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BE4D340-A58B-4CB7-8197-2F28F274B188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BE4D340-A58B-4CB7-8197-2F28F274B188}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

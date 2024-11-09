@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Koi88_BusinessObject;
+using Microsoft.EntityFrameworkCore;
 
 namespace Koi88_DAO
 {
@@ -29,12 +30,12 @@ namespace Koi88_DAO
 
         public Account GetAccountByUsername(string username)
         {
-            return _dbContext.Accounts.SingleOrDefault(x => x.Username == username);
+            return _dbContext.Accounts.Include(a => a.Customers).SingleOrDefault(x => x.Username == username);
         }
 
         public Account GetAccountByAccountID(int id)
         {
-            return _dbContext.Accounts.SingleOrDefault(x => x.AccountId == id);
+            return _dbContext.Accounts.Include(a => a.Customers).SingleOrDefault(x => x.AccountId == id);
         }
     }
 }

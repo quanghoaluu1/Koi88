@@ -48,57 +48,10 @@ namespace Koi88_WPF
         private void DataGridYourBooking_OnLoadingRow(object? sender, DataGridRowEventArgs e)
         {
             e.Row.Header = (e.Row.GetIndex() + 1).ToString();
-            var booking = e.Row.Item as Booking;
-            if(booking == null) return;
-
-            var cancelButton = FindVisualChild<Button>(e.Row, "ButtonCancel");
-            var payButton = FindVisualChild<Button>(e.Row, "ButtonPay");
-            var detailButton = FindVisualChild<Button>(e.Row, "ButtonDetail");
-
-            // Xử lý hiển thị nút "Cancel"
-            if (booking.Status != "Canceled" && booking.Status != "Confirmed" &&
-                booking.Status != "Checked in" && booking.Status != "Checked out" &&
-                booking.Status != "Delivering" && booking.Status != "Delivered")
-            {
-                cancelButton.Visibility = Visibility.Visible;
-            }
-
-            // Xử lý hiển thị nút "Pay"
-            if (booking.Status == "Accepted" || booking.Status == "Confirmed" ||
-                booking.Status == "Checked in" || booking.Status == "Checked out" ||
-                booking.Status == "Delivering" || booking.Status == "Delivered")
-            {
-                payButton.Visibility = Visibility.Visible;
-            }
-
-            // Xử lý hiển thị nút "Detail"
-            if (booking.Status == "Confirmed" || booking.Status == "Checked in" ||
-                booking.Status == "Checked out" || booking.Status == "Delivering" ||
-                booking.Status == "Delivered")
-            {
-                detailButton.Visibility = Visibility.Visible;
-            }
+            
         }
 
-        private T FindVisualChild<T>(DependencyObject parent, string name) where T : FrameworkElement
-        {
-            if (parent == null) return null;
-            int childrenCount = VisualTreeHelper.GetChildrenCount(parent);
-            for (int i = 0; i < childrenCount; i++)
-            {
-                var child = VisualTreeHelper.GetChild(parent, i);
-                if (child is T frameworkElement && frameworkElement.Name == name)
-                {
-                    return frameworkElement;
-                }
-                var result = FindVisualChild<T>(child, name);
-                if (result != null)
-                {
-                    return result;
-                }
-            }
-            return null;
-        }
+        
 
         private void ButtonCancel_OnClick(object sender, RoutedEventArgs e)
         {

@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Koi88_BusinessObject;
 using Koi88_Repository;
+using Koi88_Service;
 
 namespace Koi88_WPF
 {
@@ -19,13 +20,13 @@ namespace Koi88_WPF
     public partial class MainWindow : Window
     {
         private readonly int _accountId;
-        private IAccountRepository _accountRepository;
+        private IAccountService _accountService;
         public MainWindow(int accountId)
         {
             InitializeComponent();
-            _accountRepository = new AccountRepository();
+            _accountService = new AccountService();
             this._accountId = accountId;
-            Account account = _accountRepository.GetAccountByAccountId(_accountId);
+            Account account = _accountService.GetAccountByAccountId(_accountId);
             TextBlockWelcome.Text = "Welcome " + account.Lastname;
             int? role = account.RoleId;
             switch (role)

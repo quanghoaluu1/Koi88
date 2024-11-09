@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Koi88_BusinessObject;
 using Koi88_Repository;
+using Koi88_Service;
 
 namespace Koi88_WPF
 {
@@ -21,18 +22,18 @@ namespace Koi88_WPF
     /// </summary>
     public partial class Login : Window
     {
-        private readonly IAccountRepository _accountRepository;
+        private readonly IAccountService _accountService;
         public Login()
         {
             InitializeComponent();
-            _accountRepository = new AccountRepository();
+            _accountService = new AccountService();
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
             string username = TextBoxUsername.Text;
             string password = PasswordBoxPassword.Password;
-            Account account = _accountRepository.GetAccountByUsername(username);
+            Account account = _accountService.GetAccountByUsername(username);
             if (account != null && account.Password != null && account.Password.Equals(password))
             {
                 int accountId = account.AccountId;
