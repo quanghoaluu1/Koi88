@@ -101,6 +101,7 @@ public partial class Koi88Context : DbContext
             entity.Property(e => e.BookingId).HasColumnName("booking_id");
             entity.Property(e => e.BookingDate).HasColumnName("booking_date");
             entity.Property(e => e.BookingPaymentId).HasColumnName("booking_payment_id");
+            entity.Property(e => e.ConsultantId).HasColumnName("consultant_id");
             entity.Property(e => e.CustomerId).HasColumnName("customer_id");
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
@@ -147,6 +148,10 @@ public partial class Koi88Context : DbContext
             entity.HasOne(d => d.BookingPayment).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.BookingPaymentId)
                 .HasConstraintName("FK__Booking__booking__5535A963");
+
+            entity.HasOne(d => d.Consultant).WithMany(p => p.Bookings)
+                .HasForeignKey(d => d.ConsultantId)
+                .HasConstraintName("FK__Booking__consult__05D8E0BE");
 
             entity.HasOne(d => d.Customer).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.CustomerId)

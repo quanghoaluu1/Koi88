@@ -27,6 +27,8 @@ public partial class Account
 
     public bool? Status { get; set; }
 
+    public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+
     public virtual ICollection<Customer> Customers { get; set; } = new List<Customer>();
 
     public virtual Role? Role { get; set; }

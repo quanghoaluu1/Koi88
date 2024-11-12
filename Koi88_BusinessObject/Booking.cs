@@ -51,9 +51,13 @@ public partial class Booking
 
     public bool? IsActive { get; set; }
 
+    public int? ConsultantId { get; set; }
+
     public virtual BookingPayment? BookingPayment { get; set; }
 
     public virtual ICollection<BookingPayment> BookingPayments { get; set; } = new List<BookingPayment>();
+
+    public virtual Account? Consultant { get; set; }
 
     public virtual Customer? Customer { get; set; }
 
