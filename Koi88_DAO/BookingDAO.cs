@@ -10,20 +10,24 @@ namespace Koi88_DAO
 {
     public class BookingDAO
     {
-        private Koi88Context _dbContext;
-        private BookingDAO instance;
-        public BookingDAO Instance
+        private static Koi88Context _dbContext;
+        private static BookingDAO instance;
+        public static BookingDAO Instance
         {
             get
             {
                 if (instance == null)
+                {
+                    _dbContext = new Koi88Context();
                     instance = new BookingDAO();
+                }
+                    
                 return instance;
             }
         }
-        public BookingDAO()
+        private BookingDAO()
         {
-            _dbContext = new Koi88Context();
+            
         }
 
         public bool CreateBooking(Booking booking)
@@ -62,6 +66,11 @@ namespace Koi88_DAO
             {
                 return false;
             }
+        }
+
+        public List<Booking> GetDeliveredBookingsByAccountId(int accountId)
+        {
+            return _dbContext.Bookings.Include(b => b.Trip).Where(b => b.Status == "Delivered" || b.Status == "Canceled" && b.Customer.AccountId.Equals(accountId) ).ToList();
         }
     }
 }

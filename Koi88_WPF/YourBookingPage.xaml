@@ -17,7 +17,7 @@
                 <DataGridTextColumn Header="Booking Date" Binding="{Binding BookingDate}" Width="*"/>
                 <DataGridTextColumn Header="Trip Name" Binding="{Binding TripName}" Width="*"/>
                 <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*"/>
-                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="*"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding QuotedAmount}" Width="*"/>
                 <DataGridTemplateColumn Header="Action" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

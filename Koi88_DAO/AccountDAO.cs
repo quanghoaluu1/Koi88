@@ -11,18 +11,22 @@ namespace Koi88_DAO
     public class AccountDAO
     {
         private static AccountDAO instance;
-        private Koi88Context _dbContext;
+        private static Koi88Context _dbContext;
 
-        public AccountDAO()
+        private AccountDAO()
         {
-            _dbContext = new Koi88Context();
+           
         }
-        public AccountDAO Instance
+        public static AccountDAO Instance
         {
             get
             {
                 if (instance == null)
+                {
                     instance = new AccountDAO();
+                    _dbContext = new Koi88Context();
+                }
+                    
                 return instance;
             }
             

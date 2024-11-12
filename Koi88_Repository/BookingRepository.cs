@@ -10,20 +10,31 @@ namespace Koi88_Repository
 {
     public class BookingRepository: IBookingRepository
     {
-        private BookingDAO _bookingDAO = new BookingDAO();
+        private readonly BookingDAO _bookingDAO;
+
+        public BookingRepository()
+        {
+            _bookingDAO = BookingDAO.Instance;
+        }
+
         public bool CreateBooking(Booking booking)
         {
-            return _bookingDAO.Instance.CreateBooking(booking);
+            return _bookingDAO.CreateBooking(booking);
         }
 
         public List<Booking> GetBookingsByAccountId(int accountId)
         {
-            return _bookingDAO.Instance.GetBookingsByAccountId(accountId);
+            return _bookingDAO.GetBookingsByAccountId(accountId);
         }
 
         public bool CancelBooking(int bookingId)
         {
-            return _bookingDAO.Instance.CancelBooking(bookingId);
+            return _bookingDAO.CancelBooking(bookingId);
+        }
+
+        public List<Booking> GetDeliveredBookingsByAccountId(int accountId)
+        {
+            return _bookingDAO.GetDeliveredBookingsByAccountId(accountId);
         }
     }
 }

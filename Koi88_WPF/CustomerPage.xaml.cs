@@ -36,5 +36,15 @@ namespace Koi88_WPF
         {
             NavigationService.Navigate(new YourBookingPage(_accountId));
         }
+
+        private void ButtonBookingHistory_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new BookingHistoryPage(_accountId));
+        }
+
+        private void ButtonAbout_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AboutPage());
+        }
     }
 }
