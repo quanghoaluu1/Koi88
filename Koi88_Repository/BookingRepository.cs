@@ -36,5 +36,10 @@ namespace Koi88_Repository
         {
             return _bookingDAO.GetDeliveredBookingsByAccountId(accountId);
         }
+
+        public Booking GetBookingById(int bookingId)
+        {
+            return _bookingDAO.GetBookingById(bookingId);
+        }
     }
 }

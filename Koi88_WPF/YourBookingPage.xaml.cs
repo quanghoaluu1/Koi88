@@ -42,7 +42,6 @@ namespace Koi88_WPF
             DataGridYourBooking.ItemsSource = _bookingRepository.GetBookingsByAccountId(_accountId);
             int count = 1;
             count++;
-            
         }
 
         private void DataGridYourBooking_OnLoadingRow(object? sender, DataGridRowEventArgs e)
@@ -51,23 +50,8 @@ namespace Koi88_WPF
             
         }
 
-        
 
-        private void ButtonCancel_OnClick(object sender, RoutedEventArgs e)
-        {
-            var button = sender as Button;
-            if (button != null)
-            {
-                int bookingId = (int)button.Tag;
-                _bookingRepository.CancelBooking(bookingId);
-                DataGridYourBooking.ItemsSource = _bookingRepository.GetBookingsByAccountId(_accountId);
-            }
-            var result = MessageBox.Show("Are you sure you want to cancel this booking?", "Cancel Booking", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-               
-            }
-        }
+        
 
         private bool isRestrictedStatus(string status)
         {
@@ -79,13 +63,16 @@ namespace Koi88_WPF
                 || status != "Delivered";
         }
 
-        private void ButtonPay_OnClick(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+
 
         private void ButtonDetail_OnClick(object sender, RoutedEventArgs e)
         {
+            var button = sender as Button;
+            if (button != null)
+            {
+                var bookingId = (int)button.Tag;
+                NavigationService.Navigate(new BookingDetailPage(bookingId));
+            }
 
         }
     }

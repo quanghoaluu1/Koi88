@@ -72,5 +72,10 @@ namespace Koi88_DAO
         {
             return _dbContext.Bookings.Include(b => b.Trip).Where(b => b.Status == "Delivered" || b.Status == "Canceled" && b.Customer.AccountId.Equals(accountId) ).ToList();
         }
+
+        public Booking GetBookingById(int bookingId)
+        {
+            return _dbContext.Bookings.Include(b => b.Trip).SingleOrDefault(b => b.BookingId == bookingId);
+        }
     }
 }

@@ -9,7 +9,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AsagiKoi.jpg" />
+    <None Remove="Resource\Fonts\Ukiyo.otf" />
+    <None Remove="Resource\Images\KoiVariety\Asagi.jpg" />
+    <None Remove="Resource\Images\KoiVariety\AsagiKoi.jpg" />
+    <None Remove="Resource\Images\KoiVariety\Kohaku.jpg" />
+    <None Remove="Resource\Images\KoiVariety\KohakuKoi.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Koi88_Service\Koi88_Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="AsagiKoi.jpg" />
+    <Resource Include="Resource\Fonts\Ukiyo.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\KoiVariety\Asagi.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\KoiVariety\AsagiKoi.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\KoiVariety\Kohaku.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\KoiVariety\KohakuKoi.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

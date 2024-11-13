@@ -14,5 +14,6 @@ namespace Koi88_Repository
         bool CancelBooking(int bookingId);
 
         List<Booking> GetDeliveredBookingsByAccountId(int accountId);
+        Booking GetBookingById(int bookingId);
     }
 }

@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:Koi88_WPF"
              StartupUri="Login.xaml">
     <Application.Resources>
-         
+         <Style x:Key="lblName" TargetType="Label">
+            <Setter Property="FontFamily" Value="Resource/Fonts/Ukiyo.otf #Ukiyo"/> 
+         </Style>
     </Application.Resources>
 </Application>
