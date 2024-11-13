@@ -33,7 +33,7 @@ namespace Koi88_WPF
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new CustomerPage(_accountId));
         }
 
         private void YourBookingPage_OnLoaded(object sender, RoutedEventArgs e)
@@ -51,27 +51,22 @@ namespace Koi88_WPF
         }
 
 
-        
-
-        private bool isRestrictedStatus(string status)
-        {
-            return status != "Cancelled"
-                || status != "Confirmed"
-                || status != "Checked in"
-                || status != "Checked out"
-                || status != "Delivering"
-                || status != "Delivered";
-        }
-
-
-
         private void ButtonDetail_OnClick(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
             if (button != null)
             {
                 var bookingId = (int)button.Tag;
-                NavigationService.Navigate(new BookingDetailPage(bookingId));
+                Booking booking = _bookingRepository.GetBookingById(bookingId);
+                if (booking.Status.Equals("Rejected"))
+                {
+                    NavigationService.Navigate(new NewBookingPage(booking, _accountId));
+                }
+                else
+                {
+                    NavigationService.Navigate(new BookingDetailPage(bookingId));
+                }
+                
             }
 
         }

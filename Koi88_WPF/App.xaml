@@ -7,5 +7,7 @@
          <Style x:Key="lblName" TargetType="Label">
             <Setter Property="FontFamily" Value="Resource/Fonts/Ukiyo.otf #Ukiyo"/> 
          </Style>
+
+
     </Application.Resources>
 </Application>

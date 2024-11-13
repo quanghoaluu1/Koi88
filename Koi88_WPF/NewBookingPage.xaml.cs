@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Koi88_BusinessObject;
 using Koi88_Service;
+using Microsoft.Identity.Client;
 
 namespace Koi88_WPF
 {
@@ -12,6 +13,7 @@ namespace Koi88_WPF
     public partial class NewBookingPage : Page
     {
         private readonly int _accountId;
+        private Booking _booking;
         private IBookingService _bookingService;
         private IAccountService _accountService;
         public NewBookingPage(int accountId)
@@ -20,6 +22,66 @@ namespace Koi88_WPF
             _bookingService = new BookingService();
             _accountService = new AccountService();
             this._accountId = accountId;
+
+        }
+
+        public NewBookingPage(Booking booking, int accountId)
+        {
+            InitializeComponent();
+            _bookingService = new BookingService();
+            _accountService = new AccountService();
+            this._booking = booking;
+            this._accountId = accountId;
+        }
+
+        private void NewBookingPage_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            if (_booking != null)
+            {
+                if (_booking.Status != null)
+                {
+                    LabelTitle.Content = "Re-Submit Booking";
+                    ButtonSubmit.Visibility = Visibility.Hidden;
+                    ButtonReSubmit.Visibility = Visibility.Visible;
+                    TextBoxFullName.Text = _booking.Fullname;
+                    TextBoxEmail.Text = _booking.Email;
+                    TextBoxPhoneNumber.Text = _booking.Phone;
+                    ComboBoxGender.Text = _booking.Gender;
+                    TextBoxFavouriteFarm.Text = _booking.Favoritefarm;
+                    TextBoxFavouriteBreed.Text = _booking.FavoriteKoi;
+                    DatePickerStartDate.Text = _booking.StartDate.ToString();
+                    DatePickerEndDate.Text = _booking.EndDate.ToString();
+                    TextBoxAdditionalInformation.Text = _booking.Note;
+                    TextBoxEstimateCost.Text = _booking.EstimatedCost.ToString();
+                    TextBoxHotelAccommodation.Text = _booking.HotelAccommodation;
+                }
+            }
+            
+        }
+
+        private void ButtonReSubmit_OnClick(object sender, RoutedEventArgs e)
+        {
+            _booking.Fullname = TextBoxFullName.Text;
+            _booking.Email = TextBoxEmail.Text;
+            _booking.Phone = TextBoxPhoneNumber.Text;
+            _booking.Gender = ComboBoxGender.Text;
+            _booking.Favoritefarm = TextBoxFavouriteFarm.Text;
+            _booking.FavoriteKoi = TextBoxFavouriteBreed.Text;
+            _booking.StartDate = DateOnly.FromDateTime(DatePickerStartDate.SelectedDate.Value);
+            _booking.EndDate = DateOnly.FromDateTime(DatePickerEndDate.SelectedDate.Value);
+            _booking.Note = TextBoxAdditionalInformation.Text;
+            _booking.EstimatedCost = Decimal.Parse(TextBoxEstimateCost.Text);
+            _booking.HotelAccommodation = TextBoxHotelAccommodation.Text;
+            _booking.Status = "Requested";
+            if (_bookingService.EditBooking(_booking))
+            {
+                MessageBox.Show("Booking re-submitted successfully");
+                NavigationService.Navigate(new YourBookingPage(_accountId));
+            }
+            else
+            {
+                MessageBox.Show("Booking re-submission failed");
+            }
 
         }
 
@@ -268,6 +330,9 @@ namespace Koi88_WPF
         {
             NavigationService.GoBack();
         }
+
+
+        
     }
 }
 

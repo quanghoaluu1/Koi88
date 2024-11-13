@@ -14,5 +14,7 @@ namespace Koi88_Service
         bool CancelBooking(int bookingId);
 
         Booking GetBookingById(int bookingId);
+
+        bool EditBooking(Booking booking);
     }
 }

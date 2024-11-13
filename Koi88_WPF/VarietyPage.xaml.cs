@@ -64,5 +64,12 @@ namespace Koi88_WPF
         {
             NavigationService.GoBack();
         }
+
+        private void DataGridVariety_OnSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            const double rowHeight = 100;
+            const double maxHeight = 400;
+            DataGridVariety.Height = Math.Min(DataGridVariety.Items.Count * rowHeight, maxHeight);
+        }
     }
 }

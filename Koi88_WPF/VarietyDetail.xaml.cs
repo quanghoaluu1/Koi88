@@ -47,7 +47,10 @@ namespace Koi88_WPF
                 case 4:
                     ImageKohaku.Visibility = Visibility.Visible;
                     break;
-            }
+                case 5:
+                    ImageTancho.Visibility = Visibility.Visible;
+                    break;
+           }
 
         }
 

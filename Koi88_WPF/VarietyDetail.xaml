@@ -14,8 +14,9 @@
         <Label Name="LabelTitle" Content="Label" FontFamily="/Resource/Fonts/#Ukiyo Mind DEMO" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"/>
         <Image Name="ImageTitle" HorizontalAlignment="Left" Height="160" Margin="34,78,0,0" VerticalAlignment="Top" Width="160"/>
         <TextBlock Name="TextBlockDescription" HorizontalAlignment="Left" Margin="206,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="133" Width="526"/>
-        <Image Name="ImageAsagi" HorizontalAlignment="Left" Height="169" Visibility="Hidden" Margin="146,278,0,0" VerticalAlignment="Top" Width="454" Source="Resource/Images/KoiVariety/KohakuKoi.jpg"/>
-        <Image Name="ImageKohaku" HorizontalAlignment="Left" Height="177" Visibility="Hidden" Margin="206,276,0,0" VerticalAlignment="Top" Width="334" Source="Resource/Images/KoiVariety/AsagiKoi.jpg"/>
+        <Image Name="ImageAsagi" HorizontalAlignment="Left" Height="169" Visibility="Hidden" Margin="146,278,0,0" VerticalAlignment="Top" Width="454" Source="Resource/Images/KoiVariety/AsagiKoi.jpg"/>
+        <Image Name="ImageTancho" HorizontalAlignment="Left" Height="210" Visibility="Hidden" Margin="331,237,0,0" VerticalAlignment="Top" Width="319" Source="Resource/Images/KoiVariety/TanchoKoi.jpg"/>
+        <Image Name="ImageKohaku" HorizontalAlignment="Left" Height="177" Visibility="Hidden" Margin="206,276,0,0" VerticalAlignment="Top" Width="334" Source="Resource/Images/KoiVariety/KohakuKoi.jpg"/>
         <Label Name="LabelType" HorizontalAlignment="Left" Margin="120,239,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22" Height="46"/>
     </Grid>
 </Page>

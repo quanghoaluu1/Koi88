@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:Koi88_WPF"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="800"
-      Title="NewBookingPage" Background="White">
+      Title="NewBookingPage" Background="White" Loaded="NewBookingPage_OnLoaded">
 
     <Grid>
-        <Label Content="Form Order" HorizontalAlignment="Center" Margin="0,-2,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold"/>
+        <Label Name="LabelTitle" Content="Form Order" HorizontalAlignment="Center" Margin="0,-2,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold"/>
 
         <!-- General Information  -->
         <Label Content="General Information" HorizontalAlignment="Left" Margin="70,77,0,0" VerticalAlignment="Top" Width="224" FontSize="22" FontWeight="Bold"/>
@@ -72,9 +72,10 @@
         <Label Content="Additional Information" HorizontalAlignment="Left" Margin="62,250,0,0" VerticalAlignment="Top" Width="257" FontSize="22" FontWeight="Bold"/>
         <TextBox Name="TextBoxAdditionalInformation" HorizontalAlignment="Left" Margin="10,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Height="80"/>
 
-        <Button Name="ButtonSubmit" Content="Submit Order" HorizontalAlignment="Center" Margin="0,405,0,0" VerticalAlignment="Top" Height="52" Width="142" Click="ButtonSubmit_OnClick"/>
+        <Button Name="ButtonSubmit" Visibility="Visible" Content="Submit Order" HorizontalAlignment="Center" Margin="0,405,0,0" VerticalAlignment="Top" Height="52" Width="142" Click="ButtonSubmit_OnClick"/>
+        <Button Name="ButtonReSubmit" Visibility="Hidden" Content="Re-Submit Order" HorizontalAlignment="Center" Margin="0,405,0,0" VerticalAlignment="Top" Height="52" Width="142" Click="ButtonReSubmit_OnClick"/>
         <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click"/>
-
+        
 
     </Grid>
 </Page>

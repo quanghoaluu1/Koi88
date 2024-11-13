@@ -34,5 +34,10 @@ namespace Koi88_Service
         {
             return _bookingRepository.GetBookingById(bookingId);
         }
+
+        public bool EditBooking(Booking booking)
+        {
+            return _bookingRepository.EditBooking(booking);
+        }
     }
 }
