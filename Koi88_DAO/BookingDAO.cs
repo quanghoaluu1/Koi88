@@ -46,7 +46,7 @@ namespace Koi88_DAO
 
         public List<Booking> GetBookingsByAccountId(int accountId)
         {
-            return _dbContext.Bookings.Include(b => b.Trip).Where(b => b.Customer.AccountId == accountId).ToList();
+            return _dbContext.Bookings.Include(b => b.PoId).Include(b => b.Trip).Where(b => b.Customer.AccountId == accountId).ToList();
         }
 
         public bool CancelBooking(int bookingId)
@@ -68,9 +68,14 @@ namespace Koi88_DAO
             }
         }
 
+        public List<Booking> GetCurrentBookingByAccountId(int accountId)
+        {
+            return _dbContext.Bookings.Include(b => b.Trip).Where(b => (b.Status == "Requested" || b.Status == "Accepted" || b.Status == "Confirmed") && b.Customer.AccountId.Equals(accountId)).ToList();
+        }
+
         public List<Booking> GetDeliveredBookingsByAccountId(int accountId)
         {
-            return _dbContext.Bookings.Include(b => b.Trip).Where(b => b.Status == "Delivered" || b.Status == "Canceled" && b.Customer.AccountId.Equals(accountId) ).ToList();
+            return _dbContext.Bookings.Include(b => b.Trip).Where(b => ( b.Status == "Delivered" || b.Status == "Canceled" ) && b.Customer.AccountId.Equals(accountId) ).ToList();
         }
 
         public Booking GetBookingById(int bookingId)
@@ -94,6 +99,21 @@ namespace Koi88_DAO
             {
                 return false;
             }
+        }
+
+        public List<Booking> GetDepositAndDeliveredBookings()
+        {
+            return _dbContext.Bookings
+                .Include(b => b.Po)
+                .Include(b => b.Trip) 
+                .Where(b => b.Status == "Deposited" || b.Status == "Delivered" || b.Status == "Delivering")
+                .ToList();
+
+        }
+
+        public List<Booking> GetBookingsByStatus(string status)
+        {
+            return _dbContext.Bookings.Include(b => b.Po).Include(b => b.Trip).Where(b => b.Status == status).ToList();
         }
     }
 }

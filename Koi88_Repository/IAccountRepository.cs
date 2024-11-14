@@ -13,4 +13,5 @@ public interface IAccountRepository
     public Account GetAccountByCustomerId(int customerId);
     public List<Account> GetConsultantByRoleId(int roleId);
 
+    public bool UpdateAccount(Account account);
 }

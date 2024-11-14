@@ -5,10 +5,36 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Koi88_WPF"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800" Background="White"
       Title="DeliveryStaffPage">
 
     <Grid>
-        
+        <DataGrid Name="DataGridBooking" Margin="0,58,0,10" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Booking ID" Binding="{Binding BookingId}" Width="*" />
+                <DataGridTextColumn Header="Booking Date" Binding="{Binding BookingDate}" Width="*" />
+                <DataGridTextColumn Header="Full Name" Binding="{Binding Fullname}" Width="*" />
+                <DataGridTextColumn Header="Trip" Binding="{Binding Trip.TripName}" Width="*" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*" />
+
+                <DataGridTemplateColumn Header="Action" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="ButtonDelivery" 
+                                    Tag="{Binding BookingId}" 
+                                    Content="Confirm" 
+                                    Click="ButtonDelivery_OnClick" 
+                                    Margin="5,0,0,0"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate></DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox Name="ComboBoxStatus" HorizontalAlignment="Left" Margin="542,35,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="Deposited" />
+            <ComboBoxItem Content="Delivering" />
+            <ComboBoxItem Content="Delivered" />
+        </ComboBox>
+
     </Grid>
 </Page>
