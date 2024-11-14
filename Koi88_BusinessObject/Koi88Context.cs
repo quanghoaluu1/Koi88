@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Koi88_BusinessObject;
 
@@ -49,7 +50,19 @@ public partial class Koi88Context : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-VHUONTB\\SQLEXPRESS02;uid=sa;pwd=12345;database=Koi88;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer(GetConnectionString());
+
+
+    private string GetConnectionString()
+    {
+        IConfiguration config = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", true, true)
+            .Build();
+        var strConn = config["ConnectionStrings:DefaultConnectionStringDB"];
+
+        return strConn;
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -101,6 +114,7 @@ public partial class Koi88Context : DbContext
             entity.Property(e => e.BookingId).HasColumnName("booking_id");
             entity.Property(e => e.BookingDate).HasColumnName("booking_date");
             entity.Property(e => e.BookingPaymentId).HasColumnName("booking_payment_id");
+            entity.Property(e => e.ConsultantId).HasColumnName("consultant_id");
             entity.Property(e => e.CustomerId).HasColumnName("customer_id");
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
@@ -147,6 +161,10 @@ public partial class Koi88Context : DbContext
             entity.HasOne(d => d.BookingPayment).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.BookingPaymentId)
                 .HasConstraintName("FK__Booking__booking__5535A963");
+
+            entity.HasOne(d => d.Consultant).WithMany(p => p.Bookings)
+                .HasForeignKey(d => d.ConsultantId)
+                .HasConstraintName("FK__Booking__consult__05D8E0BE");
 
             entity.HasOne(d => d.Customer).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.CustomerId)

@@ -9,6 +9,58 @@
       Title="ManagerPage">
 
     <Grid>
-        
+        <Button Name="ButtonOrderManagement" 
+                Content="Order Management" 
+                HorizontalAlignment="Left" 
+                Margin="38,49,0,0" 
+                VerticalAlignment="Top" 
+                Height="25" 
+                Width="120" 
+                Click="OnOrderManagementClicked"/>
+
+        <Button Name="ButtonEmployeeCard" 
+                Content="Employee Card" 
+                HorizontalAlignment="Left" 
+                Margin="38,97,0,0" 
+                VerticalAlignment="Top" 
+                Height="25" 
+                Width="120" 
+                Click="ButtonEmployeeCard_Click"/>
+
+        <Button Name="ButtonUserInformation" 
+                Content="User Information" 
+                HorizontalAlignment="Left" 
+                Margin="38,157,0,0" 
+                VerticalAlignment="Top" 
+                Height="25" 
+                Width="120" 
+                Click="ButtonUserInformation_Click"/>
+
+        <Button Name="ButtonKoiFarm" 
+                Content="Koi Farm" 
+                HorizontalAlignment="Left" 
+                Margin="38,225,0,0" 
+                VerticalAlignment="Top" 
+                Height="25" 
+                Width="120" 
+                Click="ButtonKoiFarm_Click"/>
+
+        <Button Name="ButtonVariety" 
+                Content="Variety" 
+                HorizontalAlignment="Left" 
+                Margin="38,285,0,0" 
+                VerticalAlignment="Top" 
+                Height="25" 
+                Width="120" 
+                Click="ButtonVariety_Click"/>
+
+        <Button Name="ButtonKoiFish" 
+                Content="Koi Fish" 
+                HorizontalAlignment="Left" 
+                Margin="38,354,0,0" 
+                VerticalAlignment="Top" 
+                Height="25" 
+                Width="120" 
+                Click="ButtonKoiFish_Click"/>
     </Grid>
 </Page>

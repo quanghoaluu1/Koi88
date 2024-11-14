@@ -5,10 +5,52 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Koi88_WPF"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800" Background="White" Loaded="VarietyPage_OnLoaded"
       Title="VarietyPage">
 
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click" BorderBrush="#FF060606" Foreground="#FF191414" FontFamily="Arial Black" Background="#FF5285D8"/>
+        <Border CornerRadius="10" Panel.ZIndex="-99">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4892B7" Offset="0.731"/>
+                    <GradientStop Color="#FF7FB1CC" Offset="0.365"/>
+                    <GradientStop Color="#FF589ECA" Offset="0.574"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Label Content="Koi Variety" FontFamily="/Resource/Fonts/#Ukiyo Mind DEMO" HorizontalAlignment="Center" Margin="0,1,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="368" Margin="0,80,0,39" >
+            <DataGrid Name="DataGridVariety" AutoGenerateColumns="False" CanUserAddRows="False" Margin="136,0,136,0" >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="200">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImageUrl}" Stretch="Uniform" Margin="5" Tag="{Binding VarietyId}" MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown" Cursor="Hand" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Variety Name" Width="1*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding VarietyName}" 
+                                       FontSize="24" 
+                                       FontWeight="Bold" 
+                                       TextAlignment="Center" 
+                                       VerticalAlignment="Center" 
+                                       HorizontalAlignment="Center"
+                                       Tag="{Binding VarietyId}"
+                                       MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown"  Cursor="Hand"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
     </Grid>
 </Page>

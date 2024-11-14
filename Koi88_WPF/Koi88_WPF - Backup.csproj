@@ -1,0 +1,89 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resource\Images\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resource\Fonts\Ukiyo.otf" />
+    <None Remove="Resource\Images\Avatar\brunomars.jpg" />
+    <None Remove="Resource\Images\Avatar\bua.jpg" />
+    <None Remove="Resource\Images\Avatar\central.jpg" />
+    <None Remove="Resource\Images\Avatar\conan.jpg" />
+    <None Remove="Resource\Images\KoiFarm\DainichiKoiFarm.jpg" />
+    <None Remove="Resource\Images\KoiFarm\OtsukaKoiFarm.jpg" />
+    <None Remove="Resource\Images\KoiVariety\Asagi.jpg" />
+    <None Remove="Resource\Images\KoiVariety\AsagiKoi.jpg" />
+    <None Remove="Resource\Images\KoiVariety\Kohaku.jpg" />
+    <None Remove="Resource\Images\KoiVariety\KohakuKoi.jpg" />
+    <None Remove="Resource\Images\KoiVariety\Tancho.jpg" />
+    <None Remove="Resource\Images\KoiVariety\TanchoKoi.jpg" />
+    <None Remove="Resource\Images\logo.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resource\Images\Avatar\conan.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resource\Images\logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Koi88_Service\Koi88_Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resource\Fonts\Ukiyo.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Avatar\brunomars.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Avatar\bua.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Avatar\central.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\KoiFarm\DainichiKoiFarm.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\KoiFarm\OtsukaKoiFarm.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\KoiVariety\Asagi.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\KoiVariety\AsagiKoi.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\KoiVariety\Kohaku.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\KoiVariety\KohakuKoi.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\KoiVariety\Tancho.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\KoiVariety\TanchoKoi.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\logo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

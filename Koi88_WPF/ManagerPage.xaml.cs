@@ -26,5 +26,36 @@ namespace Koi88_WPF
             InitializeComponent();
             this._accountId = accountId;
         }
+
+        private void OnOrderManagementClicked(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new OrderManagement());
+
+        }
+
+        private void ButtonEmployeeCard_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EmployeeCardPage(_accountId));
+        }
+
+        private void ButtonUserInformation_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new UserInformationPage(_accountId));
+        }
+
+        private void ButtonKoiFarm_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonVariety_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonKoiFish_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
