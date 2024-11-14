@@ -7,14 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="570" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF4CBCCA" Offset="0.558"/>
+                <GradientStop Color="#FFBB2A2A" Offset="0.892"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition Height="500"/>
         </Grid.RowDefinitions>
 
         <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
-        <TextBlock Name="TextBlockWelcome" Grid.Row="0" HorizontalAlignment="Left" Margin="130,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="50" Width="145"/>
-        <Button Grid.Row="0" Name="ButtonLogout" Content="Logout" HorizontalAlignment="Left" Margin="613,0,0,0" VerticalAlignment="Center" Height="50" Width="95" Click="ButtonLogout_OnClick_Click"/>
+        <TextBlock Name="TextBlockWelcome" Grid.Row="0" HorizontalAlignment="Left" 
+           Margin="130,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" 
+           Height="50" Width="145" 
+           Text="Welcome!"
+           Background="#F0F8FF"
+           Foreground="#333333"
+           FontSize="16"
+           FontFamily="Segoe UI"
+           FontWeight="Bold"
+           Padding="10"
+           TextAlignment="Center"></TextBlock>
+        <Button Grid.Row="0" Name="ButtonLogout" Content="Logout" HorizontalAlignment="Left" Margin="613,0,0,0" VerticalAlignment="Center" Height="50" Width="95" Click="ButtonLogout_OnClick_Click" Background="#FF188DE8" FontFamily="Arial Black" FontSize="15"/>
 
     </Grid>
 </Window>

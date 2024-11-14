@@ -9,7 +9,37 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="049e77ec538f96c4d797c47ca8405242.jpg" />
+    <None Remove="25130bb2579bd7229b070f03e9230232.jpg" />
+    <None Remove="55e574ad6cf5c7d2b7b0448ec83651d9 %281%29.jpg" />
+    <None Remove="55e574ad6cf5c7d2b7b0448ec83651d9.jpg" />
+    <None Remove="6b98f37f177fd801a5ef7081871b19a6.jpg" />
+    <None Remove="banner.png" />
+    <None Remove="banner6.png" />
+    <None Remove="fd7bf09211ff3adf3fb631be6cef8fb2.jpg" />
+    <None Remove="images\logo.png" />
+    <None Remove="KoiBanner.jpg" />
+    <None Remove="messi.png" />
+    <None Remove="pngtree-beautiful-koi-fish-swimming-image_15937245.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Koi88_Service\Koi88_Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="049e77ec538f96c4d797c47ca8405242.jpg" />
+    <Resource Include="25130bb2579bd7229b070f03e9230232.jpg" />
+    <Resource Include="55e574ad6cf5c7d2b7b0448ec83651d9 (1).jpg" />
+    <Resource Include="55e574ad6cf5c7d2b7b0448ec83651d9.jpg" />
+    <Resource Include="6b98f37f177fd801a5ef7081871b19a6.jpg" />
+    <Resource Include="banner.png" />
+    <Resource Include="banner6.png" />
+    <Resource Include="fd7bf09211ff3adf3fb631be6cef8fb2.jpg" />
+    <Resource Include="images\logo.png" />
+    <Resource Include="KoiBanner.jpg" />
+    <Resource Include="messi.png" />
+    <Resource Include="pngtree-beautiful-koi-fish-swimming-image_15937245.jpg" />
   </ItemGroup>
 
 </Project>

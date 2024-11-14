@@ -9,10 +9,51 @@
       Title="BookingHistoryPage" Background="White" Loaded="BookingHistoryPage_OnLoaded">
 
     <Grid>
-        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click"/>
-        <Label Content="Booking History" HorizontalAlignment="Center" Margin="0,3,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/KoiBanner.jpg"/>
+        </Grid.Background>
+        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,47,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click" Background="#FF2893F5" FontFamily="Arial Black"/>
+        <Label Content="Booking History" HorizontalAlignment="Left" Margin="220,35,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" Background="#FFB6DDE2" Opacity="0.7" Width="395" RenderTransformOrigin="0.495,0.302">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2B53A2" Offset="0.466"/>
+                    <GradientStop Color="#FF30A3B9" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
 
-        <DataGrid Name="DataGridBookingHistory" Margin="0,147,0,0" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" LoadingRow="DataGridYourBooking_OnLoadingRow">
+        <DataGrid Name="DataGridBookingHistory" Margin="0,147,0,0" AutoGenerateColumns="False" 
+          CanUserAddRows="False" ColumnWidth="*" LoadingRow="DataGridYourBooking_OnLoadingRow">
+            <DataGrid.Resources>
+                <!-- Style cho DataGrid -->
+                <Style TargetType="DataGrid">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="RowBackground" Value="White"/>
+                    <Setter Property="AlternatingRowBackground" Value="#F9F9F9"/>
+                    <Setter Property="HorizontalGridLinesBrush" Value="#E0E0E0"/>
+                    <Setter Property="VerticalGridLinesBrush" Value="#E0E0E0"/>
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="FontFamily" Value="Segoe UI"/>
+                    <Setter Property="RowHeight" Value="40"/>
+                </Style>
+
+                <!-- Style cho hàng khi hover -->
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#DCEFFE"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="#A0C4FF"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Booking Date" Binding="{Binding BookingDate}" Width="*"/>
                 <DataGridTextColumn Header="Trip Name" Binding="{Binding TripName}" Width="*"/>
