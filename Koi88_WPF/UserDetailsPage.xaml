@@ -1,7 +1,12 @@
 ﻿<Page x:Class="Koi88_WPF.UserDetailsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:koi88Wpf="clr-namespace:Koi88_WPF"
       Title="User Details">
+
+    <Page.Resources>
+        <koi88Wpf:StringToImageConverter x:Key="StringToImageConverter"></koi88Wpf:StringToImageConverter>
+    </Page.Resources>
     <Grid Margin="20">
         <StackPanel>
             <!-- Grid for aligning Back button, ComboBox, and Confirm button -->
@@ -36,6 +41,7 @@
             <TextBlock Text="About" FontSize="20" FontWeight="Bold" Margin="0,20,0,10" HorizontalAlignment="Center"/>
 
             <StackPanel Margin="0,0,0,20">
+                <Image Source="{Binding ImageUrl, Converter={StaticResource StringToImageConverter}}" Width="100" Height="100"/>
                 <TextBlock Text="First Name:" FontWeight="Bold"/>
                 <TextBlock Text="{Binding Firstname}" Margin="0,0,0,10"/>
 

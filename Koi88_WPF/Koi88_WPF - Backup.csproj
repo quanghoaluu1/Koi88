@@ -15,14 +15,6 @@
     <None Remove="Resource\Images\Avatar\bua.jpg" />
     <None Remove="Resource\Images\Avatar\central.jpg" />
     <None Remove="Resource\Images\Avatar\conan.jpg" />
-    <None Remove="Resource\Images\Avatar\default-avatar.jpg" />
-    <None Remove="Resource\Images\Avatar\J97.jpg" />
-    <None Remove="Resource\Images\Avatar\Justin.jpg" />
-    <None Remove="Resource\Images\Avatar\khoaphang.jpg" />
-    <None Remove="Resource\Images\Avatar\quaoquao.jpg" />
-    <None Remove="Resource\Images\Avatar\shin.jpg" />
-    <None Remove="Resource\Images\Avatar\thun.jpg" />
-    <None Remove="Resource\Images\Avatar\weekend.jpg" />
     <None Remove="Resource\Images\KoiFarm\DainichiKoiFarm.jpg" />
     <None Remove="Resource\Images\KoiFarm\OtsukaKoiFarm.jpg" />
     <None Remove="Resource\Images\KoiVariety\Asagi.jpg" />
@@ -35,9 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resource\Images\Avatar\conan.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Resource\Images\Avatar\conan.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -59,30 +49,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resource\Images\Avatar\central.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\Avatar\default-avatar.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\Avatar\J97.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\Avatar\Justin.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\Avatar\khoaphang.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\Avatar\quaoquao.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\Avatar\shin.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\Avatar\thun.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\Avatar\weekend.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resource\Images\KoiFarm\DainichiKoiFarm.jpg">
