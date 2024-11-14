@@ -9,6 +9,18 @@
       Title="ManagerPage">
 
     <Grid>
-        
+        <Button Name="ButtonOrderManagement" 
+                Content="Order Management" 
+                HorizontalAlignment="Left" 
+                Margin="38,35,0,0" 
+                VerticalAlignment="Top" 
+                Height="25" 
+                Width="120" 
+                Click="OnOrderManagementClicked"/>
+        <Button Name="ButtonUserInformation" Content="User Information" 
+        HorizontalAlignment="Left" Margin="38,105,0,0" 
+        VerticalAlignment="Top" Height="25" Width="120" 
+        Click="ButtonUserInformation_Click"/>
+        <Button Name="ButtonEmployeeCard" Content="Employee Card" HorizontalAlignment="Left" Margin="38,70,0,0" VerticalAlignment="Top" Height="25" Width="120" Click="ButtonEmployeeCard_Click"/>
     </Grid>
 </Page>
