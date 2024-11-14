@@ -30,11 +30,17 @@ namespace Koi88_WPF
                 ContactInfo = ContactInfoTextBox.Text,
                 ImageUrl = ImageUrlTextBox.Text
             };
-            if (_koiFarmService.GetById(int.Parse(FarmIdTextBox.Text)) != null)
+            if (!string.IsNullOrEmpty(FarmIdTextBox.Text))
             {
-                MessageBox.Show("Duplicate ID !", "Falled!", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
+                if (!string.IsNullOrEmpty(FarmIdTextBox.Text))
+                {
+                    if (_koiFarmService.GetById(int.Parse(FarmIdTextBox.Text)) != null)
+                    {
+                        MessageBox.Show("Duplicate ID !", "Falled!", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
 
+                    }
+                }
             }
 
             if (_koiFarmService.Create(farm))
