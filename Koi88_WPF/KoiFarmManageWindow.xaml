@@ -32,9 +32,9 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Margin="123,434,0,0" VerticalAlignment="Top" Height="28" Width="64" Click="CreateButton_Click"/>
-        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Margin="287,434,0,0" VerticalAlignment="Top" Height="28" Width="64" Click="UpdateButton_Click"/>
-        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="456,434,0,0" VerticalAlignment="Top" Height="28" Width="64" Click="DeleteButton_Click"/>
-        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Margin="641,434,0,0" VerticalAlignment="Top" Height="28" Width="64" Click="QuitButton_Click"/>
+        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Margin="95,421,0,0" VerticalAlignment="Top" Height="32" Width="69" Click="CreateButton_Click"/>
+        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Margin="272,421,0,0" VerticalAlignment="Top" Height="32" Width="69" Click="UpdateButton_Click"/>
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="454,421,0,0" VerticalAlignment="Top" Height="32" Width="69" Click="DeleteButton_Click"/>
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Margin="654,421,0,0" VerticalAlignment="Top" Height="32" Width="69" Click="QuitButton_Click"/>
     </Grid>
 </Window>

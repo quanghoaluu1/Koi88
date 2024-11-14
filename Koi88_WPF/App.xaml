@@ -2,12 +2,26 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Koi88_WPF"
-             StartupUri="VarietyManagePage.xaml">
+             StartupUri="Login.xaml">
     <Application.Resources>
          <Style x:Key="lblName" TargetType="Label">
             <Setter Property="FontFamily" Value="Resource/Fonts/Ukiyo.otf #Ukiyo"/> 
          </Style>
-
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="2" 
+                            CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
     </Application.Resources>
 </Application>

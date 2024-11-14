@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -45,17 +46,20 @@ namespace Koi88_WPF
 
         private void ButtonKoiFarm_Click(object sender, RoutedEventArgs e)
         {
-
+           KoiFarmManageWindow window = new KoiFarmManageWindow();
+            window.Show();
         }
 
         private void ButtonVariety_Click(object sender, RoutedEventArgs e)
         {
-
+           VarietyManagePage varietyManageWindow = new VarietyManagePage();
+            varietyManageWindow.Show();
         }
 
         private void ButtonKoiFish_Click(object sender, RoutedEventArgs e)
         {
-
+            KoiFishManagePage koiFishManagePage = new KoiFishManagePage();
+            koiFishManagePage.Show();
         }
     }
 }
