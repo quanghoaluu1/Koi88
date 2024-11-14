@@ -22,14 +22,14 @@ namespace Koi88_WPF
     /// </summary>
     public partial class FarmPage : Page
     {
-        private IFarmService _farmService;
+        private KoiFarmService _farmService;
         private List<KoiFarm> koiFarms;
         private int currentIndex = 0;
         public FarmPage()
         {
             InitializeComponent();
-            _farmService = new FarmService();
-            koiFarms = _farmService.GetFarms();
+            _farmService = new KoiFarmService();
+            koiFarms = _farmService.GetAll();
             FarmListBox.ItemsSource = koiFarms;
             FarmListBox.SelectedIndex = currentIndex;
         }

@@ -6,43 +6,43 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Koi88_DAO
 {
-    public class VarietyDAO
+    public class KoiFishDAO
     {
-        private static VarietyDAO instance;
+        private static KoiFishDAO instance;
         private static Koi88Context _dbContext;
 
-        private VarietyDAO()
+        private KoiFishDAO()
         {
         }
 
-        public static VarietyDAO Instance
+        public static KoiFishDAO Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new VarietyDAO();
+                    instance = new KoiFishDAO();
                     _dbContext = new Koi88Context();
                 }
                 return instance;
             }
         }
 
-        public Variety GetVarietyById(int varietyId)
+        public KoiFish GetKoiFishById(int koiId)
         {
-            return _dbContext.Varieties.SingleOrDefault(x => x.VarietyId == varietyId);
+            return _dbContext.KoiFishes.Include(k => k.Variety).SingleOrDefault(x => x.KoiId == koiId);
         }
 
-        public List<Variety> GetAllVarieties()
+        public List<KoiFish> GetAllKoiFishes()
         {
-            return _dbContext.Varieties.ToList();
+            return _dbContext.KoiFishes.Include(k => k.Variety).ToList();
         }
 
-        public bool CreateVariety(Variety variety)
+        public bool CreateKoiFish(KoiFish koiFish)
         {
             try
             {
-                _dbContext.Varieties.Add(variety);
+                _dbContext.KoiFishes.Add(koiFish);
                 _dbContext.SaveChanges();
                 return true;
             }
@@ -52,11 +52,11 @@ namespace Koi88_DAO
             }
         }
 
-        public bool UpdateVariety(Variety variety)
+        public bool UpdateKoiFish(KoiFish koiFish)
         {
             try
             {
-                _dbContext.Varieties.Update(variety);
+                _dbContext.KoiFishes.Update(koiFish);
                 _dbContext.SaveChanges();
                 return true;
             }
@@ -66,14 +66,14 @@ namespace Koi88_DAO
             }
         }
 
-        public bool DeleteVariety(int varietyId)
+        public bool DeleteKoiFish(int koiId)
         {
             try
             {
-                var variety = GetVarietyById(varietyId);
-                if (variety != null)
+                var koiFish = GetKoiFishById(koiId);
+                if (koiFish != null)
                 {
-                    _dbContext.Varieties.Remove(variety);
+                    _dbContext.KoiFishes.Remove(koiFish);
                     _dbContext.SaveChanges();
                     return true;
                 }

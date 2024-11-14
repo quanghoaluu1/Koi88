@@ -1,30 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Koi88_BusinessObject;
 using Koi88_DAO;
 
 namespace Koi88_Repository
 {
-    public class VarietyRepository: IVarietyRepository
+    public class VarietyRepository : ICRUDRepository<Variety>
     {
-        private VarietyDAO varietyDao;
+        private VarietyDAO _varietyDAO;
 
         public VarietyRepository()
         {
-            varietyDao = VarietyDAO.getInstance();
+            _varietyDAO =  VarietyDAO.Instance;
         }
 
-        public List<Variety> GetVarieties()
+        public Variety GetById(int id)
         {
-            return varietyDao.GetVarieties();
+            return _varietyDAO.GetVarietyById(id);
         }
 
-        public Variety GetVarietyById(int id)
+        public List<Variety> GetAll()
         {
-            return varietyDao.GetVarietyById(id);
+            return _varietyDAO.GetAllVarieties();
+        }
+
+        public bool Create(Variety entity)
+        {
+            return _varietyDAO.CreateVariety(entity);
+        }
+
+        public bool Update(Variety entity)
+        {
+            return _varietyDAO.UpdateVariety(entity);
+        }
+
+        public bool Delete(int id)
+        {
+            return _varietyDAO.DeleteVariety(id);
         }
     }
 }
