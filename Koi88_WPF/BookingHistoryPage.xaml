@@ -65,7 +65,6 @@
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                 <Button Name="ButtonDetail" 
                                 Tag="{Binding BookingId}" 
-                                Visibility="Hidden" 
                                 Content="Detail" 
                                 Click="ButtonDetail_OnClick" 
                                 Margin="5,0,0,0"/>

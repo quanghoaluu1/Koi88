@@ -15,6 +15,7 @@
             </StackPanel.Background>
             <Button Name="ButtonBack" Content="Back" Click="ButtonBack_Click" Width="100" Margin="0,0,0,20" Background="#2196F3" Foreground="White"/>
             <TextBlock Text="Booking Details" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+
             <TextBlock Text="Booking ID:" FontWeight="Bold"/>
             <TextBlock Name="TextBlockBookingId" Margin="0,0,0,10"/>
 
@@ -32,6 +33,7 @@
 
             <TextBlock Text="Quoted Amount:" FontWeight="Bold"/>
             <TextBlock Name="TextBlockQuotedAmount" Margin="0,0,0,10"/>
+
             <TextBlock Text="Start Date:" FontWeight="Bold"/>
             <TextBlock Name="TextBlockStartDate" Margin="0,0,0,10"/>
 

@@ -1,4 +1,5 @@
-﻿using Koi88_Repository;
+﻿using Koi88_BusinessObject;
+using Koi88_Repository;
 using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,17 @@ namespace Koi88_WPF
 
         private void ButtonDetail_OnClick(object sender, RoutedEventArgs e)
         {
+            var button = sender as Button;
+            if (button != null)
+            {
+                var bookingId = (int)button.Tag;
+                Booking booking = _bookingRepository.GetBookingById(bookingId);
+                
+                    NavigationService.Navigate(new BookingDetailPage(bookingId));
+                
 
+
+            }
         }
 
         private void BookingHistoryPage_OnLoaded(object sender, RoutedEventArgs e)

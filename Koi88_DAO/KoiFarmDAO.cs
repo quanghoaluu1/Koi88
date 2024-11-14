@@ -1,52 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Koi88_BusinessObject;
 using Microsoft.EntityFrameworkCore;
 
 namespace Koi88_DAO
 {
-    public class VarietyDAO
+    public class KoiFarmDAO
     {
-        private static VarietyDAO instance;
+        private static KoiFarmDAO instance;
         private static Koi88Context _dbContext;
-   
 
-        private VarietyDAO()
+        private KoiFarmDAO()
         {
         }
 
-        public static VarietyDAO Instance
+        public static KoiFarmDAO Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new VarietyDAO();
+                    instance = new KoiFarmDAO();
                     _dbContext = new Koi88Context();
-                instance = new VarietyDAO();
                 }
                 return instance;
             }
         }
 
-        public Variety GetVarietyById(int varietyId)
+        public KoiFarm GetKoiFarmById(int farmId)
         {
-            return _dbContext.Varieties.SingleOrDefault(x => x.VarietyId == varietyId);
+            return _dbContext.KoiFarms.SingleOrDefault(x => x.FarmId == farmId);
         }
 
-        public List<Variety> GetAllVarieties()
+        public List<KoiFarm> GetAllKoiFarms()
         {
-            return _dbContext.Varieties.ToList();
+            return _dbContext.KoiFarms.ToList();
         }
 
-        public bool CreateVariety(Variety variety)
+        public bool CreateKoiFarm(KoiFarm koiFarm)
         {
             try
             {
-                _dbContext.Varieties.Add(variety);
+                _dbContext.KoiFarms.Add(koiFarm);
                 _dbContext.SaveChanges();
                 return true;
             }
@@ -56,11 +52,11 @@ namespace Koi88_DAO
             }
         }
 
-        public bool UpdateVariety(Variety variety)
+        public bool UpdateKoiFarm(KoiFarm koiFarm)
         {
             try
             {
-                _dbContext.Varieties.Update(variety);
+                _dbContext.KoiFarms.Update(koiFarm);
                 _dbContext.SaveChanges();
                 return true;
             }
@@ -70,14 +66,14 @@ namespace Koi88_DAO
             }
         }
 
-        public bool DeleteVariety(int varietyId)
+        public bool DeleteKoiFarm(int farmId)
         {
             try
             {
-                var variety = GetVarietyById(varietyId);
-                if (variety != null)
+                var koiFarm = GetKoiFarmById(farmId);
+                if (koiFarm != null)
                 {
-                    _dbContext.Varieties.Remove(variety);
+                    _dbContext.KoiFarms.Remove(koiFarm);
                     _dbContext.SaveChanges();
                     return true;
                 }
