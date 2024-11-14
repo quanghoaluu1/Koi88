@@ -29,5 +29,15 @@ namespace Koi88_Service
         {
             return _bookingRepository.CancelBooking(bookingId);
         }
+
+        public Booking GetBookingById(int bookingId)
+        {
+            return _bookingRepository.GetBookingById(bookingId);
+        }
+
+        public bool EditBooking(Booking booking)
+        {
+            return _bookingRepository.EditBooking(booking);
+        }
     }
 }

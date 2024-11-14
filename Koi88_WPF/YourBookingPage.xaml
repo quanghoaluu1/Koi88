@@ -21,28 +21,14 @@
                 <DataGridTemplateColumn Header="Action" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Button Name="ButtonCancel" 
-                                        Tag="{Binding BookingId}" 
-                                        Visibility="Hidden" 
-                                        Content="Cancel" 
-                                        Click="ButtonCancel_OnClick" 
-                                        Margin="5,0,0,0"/>
-
-                                <Button Name="ButtonPay" 
-                                        Tag="{Binding BookingId}" 
-                                        Visibility="Hidden" 
-                                        Content="Pay" 
-                                        Click="ButtonPay_OnClick" 
-                                        Margin="5,0,0,0"/>
-
+                            
                                 <Button Name="ButtonDetail" 
                                         Tag="{Binding BookingId}" 
-                                        Visibility="Hidden" 
+                                        Visibility="Visible" 
                                         Content="Detail" 
                                         Click="ButtonDetail_OnClick" 
                                         Margin="5,0,0,0"/>
-                            </StackPanel>
+       
                             
                         </DataTemplate>
 
