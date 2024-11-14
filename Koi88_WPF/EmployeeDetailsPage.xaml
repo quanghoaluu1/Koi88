@@ -1,0 +1,57 @@
+﻿<Page x:Class="Koi88_WPF.EmployeeDetailsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Employee Details" Background="White">
+
+    <ScrollViewer Margin="20">
+        <StackPanel>
+            <Button Content="Back" Width="100" Height="35" 
+                    Background="LightGray" Foreground="Black" 
+                    Click="ButtonBack_Click" Margin="0,0,0,10"/>
+            <TextBlock Text="{Binding Username}" FontSize="28" FontWeight="Bold" 
+                       Foreground="Black" Margin="0,0,0,10" />
+            <TextBlock Text="Account ID:" FontWeight="Bold" FontSize="16" 
+                       Foreground="Black" />
+            <TextBlock Text="{Binding AccountId}" FontSize="16" 
+                       Foreground="Black" Margin="0,0,0,20" />
+            <TextBlock Text="Status:" FontWeight="Bold" FontSize="16" 
+                       Foreground="Black" />
+            <TextBlock FontSize="16" Margin="0,0,0,20">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Text" Value="Disabled"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}" Value="True">
+                                <Setter Property="Text" Value="Active"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <ComboBox Name="ComboBoxStatus" Width="150" Margin="0,5,0,20" 
+                       Background="LightGray" BorderBrush="Gray" 
+                       BorderThickness="1" Padding="5">
+                <ComboBoxItem Content="Active" Tag="1" />
+                <ComboBoxItem Content="Disabled" Tag="0" />
+            </ComboBox>
+            <Button Content="Confirm" Width="120" Height="35" 
+                    Background="Green" Foreground="White" FontWeight="Bold" 
+                    BorderBrush="Transparent" Cursor="Hand" 
+                    Margin="0,0,0,20" Click="ButtonConfirm_Click"/>
+            <TextBlock Text="About" FontSize="20" FontWeight="Bold" 
+                       Margin="0,20,0,10" Foreground="Black"/>
+            <TextBlock Text="First Name:" FontWeight="Bold" />
+            <TextBlock Text="{Binding Firstname}" />
+            <TextBlock Text="Last Name:" FontWeight="Bold" />
+            <TextBlock Text="{Binding Lastname}" />
+            <TextBlock Text="Gender:" FontWeight="Bold" />
+            <TextBlock Text="{Binding Gender}" />
+            <TextBlock Text="Email:" FontWeight="Bold" />
+            <TextBlock Text="{Binding Email}" />
+            <TextBlock Text="Phone:" FontWeight="Bold" />
+            <TextBlock Text="{Binding Phone}" />
+            <TextBlock Text="Role:" FontWeight="Bold" />
+            <TextBlock Text="{Binding Role.Name}" />
+        </StackPanel>
+    </ScrollViewer>
+</Page>

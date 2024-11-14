@@ -24,5 +24,30 @@ namespace Koi88_Repository
         {
             return _accountDAO.GetAccountByAccountID(id);
         }
+
+        public List<Account> GetAccountsByRoleId(int roleId)
+        {
+            return _accountDAO.GetAccountsByRoleId(roleId);
+        }
+
+        public List<Account> GetAccountsByRoleIds(List<int> roleIds)
+        {
+            return _accountDAO.GetAccountsByRoleIds(roleIds);
+        }
+
+        public bool UpdateAccountStatus(Account account)
+        {
+            return _accountDAO.UpdateAccountStatus(account);
+        }
+
+        public Account GetAccountByCustomerId(int customerId)
+        {
+            return _accountDAO.GetAccountByCustomerId(customerId);
+        }
+
+        public List<Account> GetConsultantByRoleId(int roleId)
+        {
+            return _accountDAO.GetConsultantByRoleId(roleId) ;
+        }
     }
 }
