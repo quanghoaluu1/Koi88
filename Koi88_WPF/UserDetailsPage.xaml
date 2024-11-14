@@ -7,73 +7,77 @@
     <Page.Resources>
         <koi88Wpf:StringToImageConverter x:Key="StringToImageConverter"></koi88Wpf:StringToImageConverter>
     </Page.Resources>
+
     <Grid Margin="20">
-        <StackPanel>
-            <!-- Grid for aligning Back button, ComboBox, and Confirm button -->
-            <Grid Margin="0,0,0,10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <!-- Grid for aligning Back button, ComboBox, and Confirm button -->
+                <Grid Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
 
-                <Button Content="Back" Width="100" Height="35" 
-                        Background="LightGray" Foreground="Black" 
-                        Click="ButtonBack_Click" Margin="0,0,10,0" Grid.Column="0"/>
+                    <Button Content="Back" Width="100" Height="35" 
+                            Background="LightGray" Foreground="Black" 
+                            Click="ButtonBack_Click" Margin="0,0,10,0" Grid.Column="0"/>
 
-                <TextBlock Text="Change Status:" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0" Grid.Column="1"/>
-                <ComboBox Name="ComboBoxStatus" Width="150" 
-                          Background="LightGray" BorderBrush="Gray" 
-                          BorderThickness="1" Padding="5" Grid.Column="1">
-                    <ComboBoxItem Content="Active" Tag="1" />
-                    <ComboBoxItem Content="Disabled" Tag="0" />
-                </ComboBox>
+                    <TextBlock Text="Change Status:" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0" Grid.Column="1"/>
+                    <ComboBox Name="ComboBoxStatus" Width="150" 
+                              Background="LightGray" BorderBrush="Gray" 
+                              BorderThickness="1" Padding="5" Grid.Column="1">
+                        <ComboBoxItem Content="Active" Tag="1" />
+                        <ComboBoxItem Content="Disabled" Tag="0" />
+                    </ComboBox>
 
-                <Button Content="Confirm" Width="120" Height="35" 
-                        Background="Green" Foreground="White" FontWeight="Bold" 
-                        BorderBrush="Transparent" Cursor="Hand" 
-                        Margin="10,0,0,0" Click="ButtonConfirm_Click" Grid.Column="2"/>
-            </Grid>
+                    <Button Content="Confirm" Width="120" Height="35" 
+                            Background="Green" Foreground="White" FontWeight="Bold" 
+                            BorderBrush="Transparent" Cursor="Hand" 
+                            Margin="10,0,0,0" Click="ButtonConfirm_Click" Grid.Column="2"/>
+                </Grid>
 
-            <TextBlock Text="{Binding Lastname}" FontSize="24" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
-            <TextBlock Text="{Binding Customers[0].CustomerId, StringFormat='Customer ID: {0}'}" FontSize="16" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding Lastname}" FontSize="24" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding Customers[0].CustomerId, StringFormat='Customer ID: {0}'}" FontSize="16" Margin="0,0,0,20" HorizontalAlignment="Center"/>
 
-            <TextBlock Text="About" FontSize="20" FontWeight="Bold" Margin="0,20,0,10" HorizontalAlignment="Center"/>
+                <TextBlock Text="About" FontSize="20" FontWeight="Bold" Margin="0,20,0,10" HorizontalAlignment="Center"/>
 
-            <StackPanel Margin="0,0,0,20">
-                <Image Source="{Binding ImageUrl, Converter={StaticResource StringToImageConverter}}" Width="100" Height="100"/>
-                <TextBlock Text="First Name:" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Firstname}" Margin="0,0,0,10"/>
+                <StackPanel Margin="0,0,0,20">
+                    <Image Source="{Binding ImageUrl, Converter={StaticResource StringToImageConverter}}" Width="100" Height="100"/>
 
-                <TextBlock Text="Last Name:" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Lastname}" Margin="0,0,0,10"/>
+                    <TextBlock Text="First Name:" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Firstname}" Margin="0,0,0,10"/>
 
-                <TextBlock Text="Gender:" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Gender}" Margin="0,0,0,10"/>
+                    <TextBlock Text="Last Name:" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Lastname}" Margin="0,0,0,10"/>
 
-                <TextBlock Text="Email:" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Email}" Margin="0,0,0,10"/>
+                    <TextBlock Text="Gender:" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Gender}" Margin="0,0,0,10"/>
 
-                <TextBlock Text="Phone:" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Phone}" Margin="0,0,0,10"/>
+                    <TextBlock Text="Email:" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Email}" Margin="0,0,0,10"/>
 
-                <TextBlock Text="Status:" FontWeight="Bold"/>
-                <TextBlock FontSize="16" Margin="0,0,0,10">
-                    <TextBlock.Style>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="Text" Value="Disabled"/>
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding Status}" Value="True">
-                                    <Setter Property="Text" Value="Active"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Status}" Value="False">
-                                    <Setter Property="Text" Value="Inactive"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </TextBlock.Style>
-                </TextBlock>
+                    <TextBlock Text="Phone:" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Phone}" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Status:" FontWeight="Bold"/>
+                    <TextBlock FontSize="16" Margin="0,0,0,10">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Text" Value="Disabled"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Status}" Value="True">
+                                        <Setter Property="Text" Value="Active"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Status}" Value="False">
+                                        <Setter Property="Text" Value="Inactive"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

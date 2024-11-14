@@ -42,5 +42,20 @@ namespace Koi88_WPF
         {
             NavigationService.Navigate(new UserInformationPage(_accountId));
         }
+
+        private void ButtonKoiFarm_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonVariety_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonKoiFish_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

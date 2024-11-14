@@ -52,22 +52,31 @@ namespace Koi88_WPF
 
         private void ButtonConfirm_Click(object sender, RoutedEventArgs e)
         {
-            var selectedStatus = ComboBoxStatus.SelectedItem as ComboBoxItem;
+            // Show confirmation message
+            var result = MessageBox.Show("Are you sure you want to change the status of this account?",
+                                         "Confirm Status Change",
+                                         MessageBoxButton.YesNo,
+                                         MessageBoxImage.Question);
 
-            if (selectedStatus != null)
+            if (result == MessageBoxResult.Yes)
             {
-                // Update the account status based on the selected item
-                bool isActive = selectedStatus.Tag.ToString() == "1"; // Tag is "1" for Active, "0" for Disabled
-                _account.Status = isActive; // Update the account status
+                var selectedStatus = ComboBoxStatus.SelectedItem as ComboBoxItem;
 
-                // Optionally, call a method to update the account in the database
-                _accountService.UpdateAccountStatus(_account); // Ensure this method exists in your service
+                if (selectedStatus != null)
+                {
+                    // Update the account status based on the selected item
+                    bool isActive = selectedStatus.Tag.ToString() == "1"; // Tag is "1" for Active, "0" for Disabled
+                    _account.Status = isActive; // Update the account status
 
-                // Show success message
-                MessageBox.Show("Update status successfully");
+                    // Call a method to update the account in the database
+                    _accountService.UpdateAccountStatus(_account); // Ensure this method exists in your service
 
-                // Reload the page or refresh the data
-                NavigationService.Navigate(new EmployeeDetailsPage(_account.AccountId)); // Reload the current page
+                    // Show success message
+                    MessageBox.Show("Status updated successfully");
+
+                    // Reload the page or refresh the data
+                    NavigationService.Navigate(new EmployeeDetailsPage(_account.AccountId)); // Reload the current page
+                }
             }
         }
 

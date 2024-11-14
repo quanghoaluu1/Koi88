@@ -40,34 +40,43 @@ namespace Koi88_WPF
 
         private void ButtonConfirm_Click(object sender, RoutedEventArgs e)
         {
-            var selectedStatus = ComboBoxStatus.SelectedItem as ComboBoxItem;
+            // Show confirmation message
+            var result = MessageBox.Show("Are you sure you want to change the status of this account?",
+                                         "Confirm Status Change",
+                                         MessageBoxButton.YesNo,
+                                         MessageBoxImage.Question);
 
-            if (selectedStatus != null)
+            if (result == MessageBoxResult.Yes)
             {
-                bool isActive = selectedStatus.Tag.ToString() == "1"; // Tag "1" for Active, "0" for Disabled
-                _account.Status = isActive;
+                var selectedStatus = ComboBoxStatus.SelectedItem as ComboBoxItem;
 
-                // Call the updated method and check the result
-                bool updateSuccessful = _accountService.UpdateAccountStatus(_account);
-
-                if (updateSuccessful)
+                if (selectedStatus != null)
                 {
-                    MessageBox.Show("Status updated successfully");
+                    bool isActive = selectedStatus.Tag.ToString() == "1"; // Tag "1" for Active, "0" for Disabled
+                    _account.Status = isActive;
 
-                    // Use FirstOrDefault to get the first customer
-                    var firstCustomer = _account.Customers.FirstOrDefault();
-                    if (firstCustomer != null)
+                    // Call the updated method and check the result
+                    bool updateSuccessful = _accountService.UpdateAccountStatus(_account);
+
+                    if (updateSuccessful)
                     {
-                        NavigationService.Navigate(new UserDetailsPage(firstCustomer.CustomerId)); // Use the first customer's ID
+                        MessageBox.Show("Status updated successfully");
+
+                        // Use FirstOrDefault to get the first customer
+                        var firstCustomer = _account.Customers.FirstOrDefault();
+                        if (firstCustomer != null)
+                        {
+                            NavigationService.Navigate(new UserDetailsPage(firstCustomer.CustomerId)); // Use the first customer's ID
+                        }
+                        else
+                        {
+                            MessageBox.Show("No customers found for this account.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("No customers found for this account.");
+                        MessageBox.Show("Failed to update status. Please try again.");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Failed to update status. Please try again.");
                 }
             }
         }
