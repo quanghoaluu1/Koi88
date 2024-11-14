@@ -7,17 +7,17 @@
         mc:Ignorable="d"
         Title="Variety Management" Height="500" Width="800" FontFamily="Tahoma" FontSize="13"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
-        <Label Content="Variety ID" HorizontalAlignment="Left" Margin="45,30,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13" Foreground="#FF3324A8" />
-        <TextBox x:Name="VarietyIdTextBox" HorizontalAlignment="Left" Margin="105,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Right" Background="#FFF3CFCF" IsReadOnly="True"/>
+        <Label Content="Variety ID" HorizontalAlignment="Left" Margin="38,30,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13" Foreground="#FF3324A8" />
+        <TextBox x:Name="VarietyIdTextBox" HorizontalAlignment="Left" Margin="105,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Right" Background="#FFAFE9CE" IsReadOnly="True"/>
 
-        <Label Content="Variety Name" HorizontalAlignment="Left" Margin="24,66,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13" Foreground="#FF3324A8" />
-        <TextBox x:Name="VarietyNameTextBox" HorizontalAlignment="Left" Margin="105,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Right" Background="#FFF3CFCF"/>
+        <Label Content="Variety Name" HorizontalAlignment="Left" Margin="18,67,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13" Foreground="#FF3324A8" />
+        <TextBox x:Name="VarietyNameTextBox" HorizontalAlignment="Left" Margin="105,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Right" Background="#FFAFE9CE"/>
 
-        <Label Content="Description" HorizontalAlignment="Left" Margin="18,103,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13" Foreground="#FF3324A8" />
-        <TextBox x:Name="DescriptionTextBox" HorizontalAlignment="Left" Margin="105,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Right" Background="#FFF3CFCF"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="511,30,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13" Foreground="#FF3324A8" />
+        <TextBox x:Name="DescriptionTextBox" HorizontalAlignment="Left" Margin="598,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177" TextAlignment="Right" Background="#FFAFE9CE" Height="44"/>
 
         <Label Content="Image URL" HorizontalAlignment="Left" Margin="266,37,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13" Foreground="#FF3324A8" />
-        <TextBox x:Name="ImageUrlTextBox" HorizontalAlignment="Left" Margin="352,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Right" Background="#FFF3CFCF"/>
+        <TextBox x:Name="ImageUrlTextBox" HorizontalAlignment="Left" Margin="352,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Right" Background="#FFAFE9CE" Height="44"/>
 
         <DataGrid x:Name="VarietyGrid" HorizontalAlignment="Center" Height="235" Margin="0,158,0,0" VerticalAlignment="Top" Width="780" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" SelectionChanged="VarietyGrid_SelectionChanged">
             <DataGrid.Columns>
