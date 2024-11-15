@@ -47,5 +47,20 @@ namespace Koi88_Repository
             return _bookingDAO.EditBooking(booking);
         }
 
+        public bool CheckinBooking(int bookingId, int consultantId)
+        {
+            return _bookingDAO.CheckinBooking(bookingId, consultantId);
+        }
+
+        public List<Booking> GetBookingsByConsultantId(int accountId)
+        {
+            return _bookingDAO.GetBookingsByConsultantId(accountId);
+        }
+
+
+        public List<Booking> GetBookingsNeedConsultant()
+        {
+            return _bookingDAO.GetBookingsNeedConsultant();
+        }
     }
 }
