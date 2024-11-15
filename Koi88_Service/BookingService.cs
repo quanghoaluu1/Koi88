@@ -25,6 +25,15 @@ namespace Koi88_Service
             return _bookingRepository.GetBookingsByAccountId(accountId);
         }
 
+        public List<Booking> GetBookingsByConsultantId(int accountId)
+        {
+            return _bookingRepository.GetBookingsByConsultantId(accountId);
+        }
+
+        public bool CheckinBooking(int bookingId, int consultantId)
+        {
+            return _bookingRepository.CheckinBooking(bookingId, consultantId);
+        }
 
         public bool CancelBooking(int bookingId)
         {
@@ -39,6 +48,11 @@ namespace Koi88_Service
         public bool EditBooking(Booking booking)
         {
             return _bookingRepository.EditBooking(booking);
+        }
+
+    public List<Booking> GetBookingsNeedConsultant()
+        {
+            return _bookingRepository.GetBookingsNeedConsultant();
         }
 
         public List<Booking> GetDeliveredBookingsByAccountId(int accountId)

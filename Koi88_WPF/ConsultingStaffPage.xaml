@@ -9,6 +9,9 @@
       Title="ConsultingStaffPage">
 
     <Grid>
-        
+
+        <Label Content="Consultant Manage" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="226" FontSize="25"/>
+        <Button x:Name="btnCheckin" Content="Check in booking" HorizontalAlignment="Left" Margin="82,99,0,0" VerticalAlignment="Top" Height="52" Width="171" Click="btnCheckin_Click"/>
+        <Button x:Name="btnManageCheckin" Content="Manage on check in booking" HorizontalAlignment="Left" Margin="82,0,0,0" VerticalAlignment="Center" Height="52" Width="171" Click="btnManageCheckin_Click"/>
     </Grid>
 </Page>

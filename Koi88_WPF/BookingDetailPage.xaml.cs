@@ -52,14 +52,8 @@ namespace Koi88_WPF
            TextBoxHotel.Text = booking.HotelAccommodation;
            TextBoxBookingDate.Text = booking.BookingDate.ToString();
            TextBoxStatus.Text = booking.Status;
-           if (booking.QuotedAmount == null)
-           {
-               TextBoxQuoteAmount.Text = "0";
-           }
-           else
-           {
-               TextBoxQuoteAmount.Text = booking.QuotedAmount.ToString();
-           }
+           TextBoxQuoteAmount.Text = booking.EstimatedCost.ToString();
+           
 
            if (booking.QuoteSentDate == null)
            {
@@ -136,6 +130,16 @@ namespace Koi88_WPF
         {
             return status == "Accepted" || status == "Confirmed" || status == "Checked in" ||
                 status == "Checked out" || status == "Delivering" || status == "Delivered";
+        }
+
+        private void ButtonPay_Click(object sender, RoutedEventArgs e)
+        {
+            Booking booking = _bookingService.GetBookingById(_bookingId);
+            booking.QuotedAmount = Decimal.Parse(TextBoxQuoteAmount.Text);
+            booking.Status = "Confirmed";
+            _bookingService.EditBooking(booking);
+            MessageBox.Show("Booking has been confirmed.");
+            NavigationService.GoBack();
         }
     }
 }

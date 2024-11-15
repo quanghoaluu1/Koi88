@@ -11,6 +11,13 @@ namespace Koi88_Service
     {
         bool CreateBooking(Booking booking);
         List<Booking> GetBookingsByAccountId(int accountId);
+
+        List<Booking> GetBookingsNeedConsultant();
+
+        public bool CheckinBooking(int bookingId, int consultantId);
+
+        public List<Booking> GetBookingsByConsultantId(int accountId);
+
         bool CancelBooking(int bookingId);
 
         Booking GetBookingById(int bookingId);

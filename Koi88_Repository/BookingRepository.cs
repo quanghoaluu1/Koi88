@@ -59,7 +59,24 @@ namespace Koi88_Repository
 
         public List<Booking> GetBookingsByStatus(string status)
         {
+
             return _bookingDAO.GetBookingsByStatus(status);
+        }
+
+        public bool CheckinBooking(int bookingId, int consultantId)
+        {
+            return _bookingDAO.CheckinBooking(bookingId, consultantId);
+        }
+
+        public List<Booking> GetBookingsByConsultantId(int accountId)
+        {
+            return _bookingDAO.GetBookingsByConsultantId(accountId);
+        }
+
+
+        public List<Booking> GetBookingsNeedConsultant()
+        {
+            return _bookingDAO.GetBookingsNeedConsultant();
         }
     }
 }

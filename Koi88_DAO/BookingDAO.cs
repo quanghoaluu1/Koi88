@@ -49,6 +49,22 @@ namespace Koi88_DAO
             return _dbContext.Bookings.Include(b => b.PoId).Include(b => b.Trip).Where(b => b.Customer.AccountId == accountId).ToList();
         }
 
+        public List<Booking> GetCurrentBookingByAccountId(int accountId)
+        {
+            return _dbContext.Bookings.Include(b => b.Trip).Where(b => (b.Status == "Requested" || b.Status == "Accepted" || b.Status == "Confirmed") && b.Customer.AccountId.Equals(accountId)).ToList();
+        }
+
+        public List<Booking> GetBookingsByConsultantId(int accountId)
+        {
+            return _dbContext.Bookings.Include(b => b.Trip).Where(b => b.Consultant.AccountId == accountId).ToList();
+        }
+
+        public List<Booking> GetBookingsNeedConsultant()
+        {
+            //return _dbContext.Bookings.Where(m => m.Status.Equals("Confirmed")).Include(b => b.Trip).Include(b => b.Customer).ThenInclude(c => c.Account).ToList();
+            return _dbContext.Bookings.Where(m => m.Status.Equals("Confirmed")).Include(b => b.Trip).ToList();
+        }
+
         public bool CancelBooking(int bookingId)
         {
             try
@@ -68,9 +84,26 @@ namespace Koi88_DAO
             }
         }
 
-        public List<Booking> GetCurrentBookingByAccountId(int accountId)
+        public bool CheckinBooking(int bookingId, int consultantId)
         {
-            return _dbContext.Bookings.Include(b => b.Trip).Where(b => (b.Status == "Requested" || b.Status == "Accepted" || b.Status == "Confirmed") && b.Customer.AccountId.Equals(accountId)).ToList();
+            try
+            {
+                var booking = _dbContext.Bookings.SingleOrDefault(b => b.BookingId == bookingId);
+                if (booking != null)
+                {
+                    booking.ConsultantId = consultantId;
+                    booking.Status = "Checkin";
+                    booking.PoId = 30;
+                    _dbContext.Update(booking);
+                    _dbContext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public List<Booking> GetDeliveredBookingsByAccountId(int accountId)
@@ -94,6 +127,7 @@ namespace Koi88_DAO
         {
             return _dbContext.Bookings.Include(b => b.Po).Include(b => b.Trip).Where(b => b.Status == status).ToList();
         }
+
 
         public Booking GetBookingById(int bookingId)
         {

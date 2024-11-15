@@ -9,9 +9,9 @@
         WindowStartupLocation="CenterScreen"
         AllowsTransparency="True" WindowStyle="None">
     <Grid>
-        
+
         <Grid.Background>
-        <ImageBrush ImageSource="/049e77ec538f96c4d797c47ca8405242.jpg"  Stretch="Fill" 
+            <ImageBrush ImageSource="/049e77ec538f96c4d797c47ca8405242.jpg"  Stretch="Fill" 
           AlignmentX="Center" 
           AlignmentY="Center"/>
         </Grid.Background>
@@ -71,7 +71,7 @@
                 BorderThickness="0" 
                 Click="ButtonLogin_Click"
                 Cursor="Hand" FontFamily="Arial Black" />
-        <Label Content="LOGIN " HorizontalAlignment="Left" Height="70" VerticalAlignment="Top"  Width="150" FontSize="60" FontWeight="Bold" FontFamily="Bernard MT Condensed" BorderBrush="#FFD81515" Margin="132,33,0,0">
+        <Label Content="LOGIN " HorizontalAlignment="Left" Height="70" VerticalAlignment="Top"  Width="164" FontSize="48" FontWeight="Bold" FontFamily="Bernard MT Condensed" BorderBrush="#FFD81515" Margin="125,35,0,0">
             <Label.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF7EDDF5" Offset="0.494"/>

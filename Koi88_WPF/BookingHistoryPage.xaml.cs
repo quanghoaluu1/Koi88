@@ -55,7 +55,7 @@ namespace Koi88_WPF
 
         private void BookingHistoryPage_OnLoaded(object sender, RoutedEventArgs e)
         {
-            DataGridBookingHistory.ItemsSource = _bookingRepository.GetDeliveredBookingsByAccountId(_accountId);
+            DataGridBookingHistory.ItemsSource = _bookingRepository.GetDepositAndDeliveredBookingsByAccountId();
             int count = 1;
             count++;
         }

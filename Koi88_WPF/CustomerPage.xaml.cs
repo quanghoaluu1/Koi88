@@ -56,5 +56,10 @@ namespace Koi88_WPF
         {
             NavigationService.Navigate(new FarmPage());
         }
+
+        private void ButtonVariety_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

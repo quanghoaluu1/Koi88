@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Koi88_Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,16 @@ namespace Koi88_WPF
         {
             InitializeComponent();
             this._accountId = accountId;
+        }
+
+        private void btnCheckin_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ConsultingStaffNeedCheckin(_accountId));
+        }
+
+        private void btnManageCheckin_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ConsultantStaffOnCheckin(_accountId));
         }
     }
 }

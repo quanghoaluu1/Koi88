@@ -47,7 +47,7 @@
         <TextBox Name="TextBoxQuoteApproved" HorizontalAlignment="Left" Margin="560,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="24"/>
         <Label Content="Quote Amount" HorizontalAlignment="Left" Margin="32,363,0,0" VerticalAlignment="Top"/>
         <TextBox Name="TextBoxQuoteAmount" HorizontalAlignment="Left" Margin="133,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22"/>
-        <Button Name="ButtonPay" Content="Pay" HorizontalAlignment="Left" Margin="259,367,0,0" VerticalAlignment="Top" Height="22" Width="55"/>
+        <Button Name="ButtonPay" Content="Pay" HorizontalAlignment="Left" Margin="259,367,0,0" VerticalAlignment="Top" Height="22" Width="55" Click="ButtonPay_Click"/>
 
 
     </Grid>
