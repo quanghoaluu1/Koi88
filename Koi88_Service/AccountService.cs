@@ -49,5 +49,10 @@ namespace Koi88_Service
         {
             return _accountRepository.GetConsultantByRoleId(roleId) ;
         }
+
+        public bool UpdateAccount(Account account)
+        {
+            return _accountRepository.UpdateAccount(account);
+        }
     }
 }

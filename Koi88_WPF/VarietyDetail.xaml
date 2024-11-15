@@ -8,8 +8,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="VarietyDetail" Background="White" Loaded="VarietyDetail_OnLoaded">
 
-    <Grid>
-        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click"/>
+    <Grid Background="#FF589ECA">
+        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click" BorderBrush="#FF040404" Background="#FF3B45D6" FontFamily="Arial Black"/>
 
         <Label Name="LabelTitle" Content="Label" FontFamily="/Resource/Fonts/#Ukiyo Mind DEMO" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"/>
         <Image Name="ImageTitle" HorizontalAlignment="Left" Height="160" Margin="34,78,0,0" VerticalAlignment="Top" Width="160"/>

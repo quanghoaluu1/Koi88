@@ -27,11 +27,16 @@ namespace Koi88_WPF
                 Description = DescriptionTextBox.Text,
                 ImageUrl = ImageUrlTextBox.Text
             };
-            if (_varietyService.GetById(int.Parse(VarietyIdTextBox.Text)) != null)
+            if (!string.IsNullOrEmpty(VarietyIdTextBox.Text))
             {
-                MessageBox.Show("Duplicate ID !", "Falled!", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
+
+                if (_varietyService.GetById(int.Parse(VarietyIdTextBox.Text)) != null)
+                {
+                    MessageBox.Show("Duplicate ID !", "Falled!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
             }
+
             if (_varietyService.Create(variety))
             {
                 MessageBox.Show("Create successfully!", "Successfully!", MessageBoxButton.OK, MessageBoxImage.Information);

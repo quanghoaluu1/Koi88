@@ -16,5 +16,7 @@ namespace Koi88_Service
         public bool UpdateAccountStatus(Account account);
         public Account GetAccountByCustomerId(int customerId);
         public List<Account> GetConsultantByRoleId(int roleId);
+
+        public bool UpdateAccount(Account account);
     }
 }

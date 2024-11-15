@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Koi88_BusinessObject;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +12,7 @@ namespace Koi88_DAO
     {
         private static VarietyDAO instance;
         private static Koi88Context _dbContext;
+   
 
         private VarietyDAO()
         {
@@ -23,6 +26,7 @@ namespace Koi88_DAO
                 {
                     instance = new VarietyDAO();
                     _dbContext = new Koi88Context();
+                instance = new VarietyDAO();
                 }
                 return instance;
             }

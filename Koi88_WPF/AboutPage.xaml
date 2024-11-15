@@ -9,7 +9,10 @@
       Title="AboutPage">
 
     <Grid>
-        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/25130bb2579bd7229b070f03e9230232.jpg"/>
+        </Grid.Background>
+        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click" Background="#FF5C8CEA" BorderBrush="#FF1D1C1C"/>
         <Label Content="About Us" HorizontalAlignment="Center" Margin="0,47,0,0" VerticalAlignment="Top" Height="85" Width="414" FontWeight="Bold" FontSize="48" FontFamily="Comic Sans MS" HorizontalContentAlignment="Center"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,157,0,0" TextWrapping="Wrap" Text="Welcome to our Nishikigoi Ordering Service in Japan – your trusted partner in finding your favorite Koi fish from Japan. We connect you with the finest Koi farms, offer personalized trips, and provide expert guidance throughout your journey. From selecting the perfect Koi to ensuring a seamless delivery, we handle every step with care and professionalism. Experience the best of Japan’s Koi culture with us!" VerticalAlignment="Top" Height="236" Width="680" FontSize="24" FontFamily="Sitka Text"/>
 

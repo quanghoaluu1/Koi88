@@ -99,6 +99,23 @@ namespace Koi88_DAO
             }
         }
 
+        public bool UpdateAccount(Account account)
+        {
+            try
+            {
+                if (account != null)
+                {
+                    _dbContext.Accounts.Update(account);
+                    _dbContext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
     }
 }

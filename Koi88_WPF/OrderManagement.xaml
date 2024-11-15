@@ -10,11 +10,14 @@
 
     <Grid Margin="20" Background="#f9f9f9">
         <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/25130bb2579bd7229b070f03e9230232.jpg"/>
+            </StackPanel.Background>
             <!-- Back Button -->
             <Button Name="ButtonBack" Content="Back" 
                     HorizontalAlignment="Left" Margin="0,0,0,10" 
                     VerticalAlignment="Top" Height="35" Width="90" 
-                    Click="ButtonBack_Click"/>
+                    Click="ButtonBack_Click" Background="#FFD84E38" BorderBrush="#FF080707"/>
 
             <TextBlock Text="Select Consultant" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
             <ComboBox Name="ComboBoxConsultants" 

@@ -15,11 +15,17 @@
     </Page.Resources>
 
     <Grid>
-        <Label Name="LabelTitle" Content="Farm" FontFamily="/Resource/Fonts/#Ukiyo Mind DEMO" HorizontalAlignment="Center" Margin="0,1,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"/>
-        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF246282" Offset="0.546"/>
+                <GradientStop Color="#FF499DC8" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Name="LabelTitle" Content="Farm" FontFamily="/Resource/Fonts/#Ukiyo Mind DEMO" HorizontalAlignment="Center" Margin="0,-7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"/>
+        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click" BorderBrush="#FF020202" Background="#FF5684CE"/>
         <ListBox x:Name="FarmListBox" Width="500" 
                      SelectedIndex="0"
-                     IsSynchronizedWithCurrentItem="True" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="150,66,150,37">
+                     IsSynchronizedWithCurrentItem="True" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="150,66,150,37" Background="#FFACBBCA">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" Width="467" Height="386">

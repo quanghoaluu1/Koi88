@@ -28,12 +28,17 @@ namespace Koi88_WPF
                 Description = DescriptionTextBox.Text,
                 ImageUrl = ImageUrlTextBox.Text
             };
-            if (_koiFishService.GetById(int.Parse(KoiIdTextBox.Text)) != null)
+            if (!string.IsNullOrEmpty(KoiIdTextBox.Text))
             {
-                MessageBox.Show("Duplicate ID !", "Falled!", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
+                if (_koiFishService.GetById(int.Parse(KoiIdTextBox.Text)) != null)
+                {
+                    MessageBox.Show("Duplicate ID !", "Falled!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
 
+                }
             }
+
+
             if (_koiFishService.Create(fish))
             {
                 MessageBox.Show("Create successfully!", "Successfully!", MessageBoxButton.OK, MessageBoxImage.Information);

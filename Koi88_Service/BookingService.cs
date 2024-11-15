@@ -25,6 +25,7 @@ namespace Koi88_Service
             return _bookingRepository.GetBookingsByAccountId(accountId);
         }
 
+
         public bool CancelBooking(int bookingId)
         {
             return _bookingRepository.CancelBooking(bookingId);
@@ -38,6 +39,26 @@ namespace Koi88_Service
         public bool EditBooking(Booking booking)
         {
             return _bookingRepository.EditBooking(booking);
+        }
+
+        public List<Booking> GetDeliveredBookingsByAccountId(int accountId)
+        {
+            return _bookingRepository.GetDeliveredBookingsByAccountId(accountId);
+        }
+
+        public List<Booking> GetDepositAndDeliveredBookingsByAccountId()
+        {
+            return _bookingRepository.GetDepositAndDeliveredBookingsByAccountId();
+        }
+
+        public List<Booking> GetCurrentBookingsByAccountId(int accountId)
+        {
+            return _bookingRepository.GetCurrentBookingsByAccountId(accountId);
+        }
+
+        public List<Booking> GetBookingsByStatus(string status)
+        {
+            return _bookingRepository.GetBookingsByStatus(status);
         }
     }
 }

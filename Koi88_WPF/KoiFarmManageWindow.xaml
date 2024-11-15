@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Koi Farm Management" Height="500" Width="800" FontFamily="Tahoma" FontSize="13"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
         <Label Content="Farm ID" HorizontalAlignment="Left" Margin="45,30,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13" Foreground="#FF3324A8" />
         <TextBox x:Name="FarmIdTextBox" HorizontalAlignment="Left" Margin="105,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Right" Background="#FFF3CFCF" IsReadOnly="True"/>
 

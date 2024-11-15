@@ -8,11 +8,68 @@
       d:DesignHeight="500" d:DesignWidth="800"
       Title="YourBooking" Background="White" Loaded="YourBookingPage_OnLoaded">
 
-    <Grid>
-        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click"/>
-        <Label Content="Your Booking" HorizontalAlignment="Center" Margin="0,3,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold"/>
+    <Grid HorizontalAlignment="Center" Margin="0,0,0,50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="453*"/>
+            <ColumnDefinition Width="347*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background >
+            <ImageBrush ImageSource="/fd7bf09211ff3adf3fb631be6cef8fb2.jpg" Stretch="Fill" 
+          AlignmentX="Center" 
+          AlignmentY="Center"/>
+        </Grid.Background>
+        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="25,46,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click" Background="#FF2893F5" FontFamily="Arial Black" BorderBrush="#FF121010" RenderTransformOrigin="0.344,0.88" Panel.ZIndex="99"/>
+        <Border CornerRadius="10" Margin="0,0,0,58" Grid.ColumnSpan="2" Panel.ZIndex="-99">
+            <Border.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF7BAFD0" Offset="0.723"/>
+                    <GradientStop Color="#FF3664BF" Offset="0.309"/>
+                    <GradientStop Color="#FF599BC5" Offset="0.739"/>
+                </RadialGradientBrush>
+            </Border.Background>
+        </Border>
 
-        <DataGrid Name="DataGridYourBooking" Margin="0,147,0,0" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" LoadingRow="DataGridYourBooking_OnLoadingRow">
+
+        <Label Content="Your Booking" HorizontalAlignment="Left" Margin="276,67,0,0" VerticalAlignment="Top" FontSize="40" FontWeight="Bold" Opacity="0.7" Width="267" RenderTransformOrigin="0.495,0.302" Height="65" Grid.ColumnSpan="2">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3C87A7" Offset="0.213"/>
+                    <GradientStop Color="#FF98C1D2" Offset="0.92"/>
+                    <GradientStop Color="#FE77B4CE" Offset="0.365"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <DataGrid Name="DataGridYourBooking" Margin="0,147,0,-49" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" LoadingRow="DataGridYourBooking_OnLoadingRow" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Grid.ColumnSpan="2">
+            <DataGrid.Resources>
+                <!-- Style cho DataGrid -->
+                <Style TargetType="DataGrid">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="RowBackground" Value="White"/>
+                    <Setter Property="AlternatingRowBackground" Value="#F9F9F9"/>
+                    <Setter Property="HorizontalGridLinesBrush" Value="#E0E0E0"/>
+                    <Setter Property="VerticalGridLinesBrush" Value="#E0E0E0"/>
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="FontFamily" Value="Segoe UI"/>
+                    <Setter Property="RowHeight" Value="40"/>
+                </Style>
+
+                <!-- Style cho hàng khi hover -->
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#DCEFFE"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="#A0C4FF"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Booking Date" Binding="{Binding BookingDate}" Width="*"/>
                 <DataGridTextColumn Header="Trip Name" Binding="{Binding TripName}" Width="*"/>
@@ -21,21 +78,25 @@
                 <DataGridTemplateColumn Header="Action" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            
-                                <Button Name="ButtonDetail" 
-                                        Tag="{Binding BookingId}" 
-                                        Visibility="Visible" 
-                                        Content="Detail" 
-                                        Click="ButtonDetail_OnClick" 
-                                        Margin="5,0,0,0"/>
-       
-                            
+                            <StackPanel>
+                                <Button Name="ButtonDetail"
+                                        Tag="{Binding BookingId}"
+                                        Visibility="Visible"
+                                        Content="Detail"
+                                        Click="ButtonDetail_OnClick"
+                                        Margin="5,0,0,0"
+
+                                        Height="40"
+                                        FontSize="12"/> 
+                            </StackPanel>
+
                         </DataTemplate>
 
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
-                    
+
+
         </DataGrid>
 
     </Grid>
