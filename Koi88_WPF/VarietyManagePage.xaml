@@ -1,0 +1,36 @@
+﻿<Window x:Class="Koi88_WPF.VarietyManagePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Koi88_WPF"
+        mc:Ignorable="d"
+        Title="Variety Management" Height="500" Width="800" FontFamily="Tahoma" FontSize="13"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="Variety ID" HorizontalAlignment="Left" Margin="45,30,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13" Foreground="#FF3324A8" />
+        <TextBox x:Name="VarietyIdTextBox" HorizontalAlignment="Left" Margin="105,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Right" Background="#FFF3CFCF" IsReadOnly="True"/>
+
+        <Label Content="Variety Name" HorizontalAlignment="Left" Margin="24,66,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13" Foreground="#FF3324A8" />
+        <TextBox x:Name="VarietyNameTextBox" HorizontalAlignment="Left" Margin="105,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Right" Background="#FFF3CFCF"/>
+
+        <Label Content="Description" HorizontalAlignment="Left" Margin="18,103,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13" Foreground="#FF3324A8" />
+        <TextBox x:Name="DescriptionTextBox" HorizontalAlignment="Left" Margin="105,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Right" Background="#FFF3CFCF"/>
+
+        <Label Content="Image URL" HorizontalAlignment="Left" Margin="266,37,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13" Foreground="#FF3324A8" />
+        <TextBox x:Name="ImageUrlTextBox" HorizontalAlignment="Left" Margin="352,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Right" Background="#FFF3CFCF"/>
+
+        <DataGrid x:Name="VarietyGrid" HorizontalAlignment="Center" Height="235" Margin="0,158,0,0" VerticalAlignment="Top" Width="780" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" SelectionChanged="VarietyGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Variety ID" Binding="{Binding VarietyId}" />
+                <DataGridTextColumn Header="Variety Name" Binding="{Binding VarietyName}" />
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+                <DataGridTextColumn Header="Image URL" Binding="{Binding ImageUrl}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Margin="123,434,0,0" VerticalAlignment="Top" Height="28" Width="64" Click="CreateButton_Click"/>
+        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Margin="287,434,0,0" VerticalAlignment="Top" Height="28" Width="64" Click="UpdateButton_Click"/>
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="456,434,0,0" VerticalAlignment="Top" Height="28" Width="64" Click="DeleteButton_Click"/>
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Margin="641,434,0,0" VerticalAlignment="Top" Height="28" Width="64" Click="QuitButton_Click"/>
+    </Grid>
+</Window>

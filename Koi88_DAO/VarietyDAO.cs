@@ -4,35 +4,89 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Koi88_BusinessObject;
+using Microsoft.EntityFrameworkCore;
 
 namespace Koi88_DAO
 {
     public class VarietyDAO
     {
-        private static Koi88Context _dbContext;
         private static VarietyDAO instance;
+        private static Koi88Context _dbContext;
+   
 
         private VarietyDAO()
         {
         }
 
-        public static VarietyDAO getInstance() {
-            if (instance == null)
+        public static VarietyDAO Instance
+        {
+            get
             {
-                _dbContext = new Koi88Context();
+                if (instance == null)
+                {
+                    instance = new VarietyDAO();
+                    _dbContext = new Koi88Context();
                 instance = new VarietyDAO();
+                }
+                return instance;
             }
-            return instance;
         }
 
-        public List<Variety> GetVarieties()
+        public Variety GetVarietyById(int varietyId)
+        {
+            return _dbContext.Varieties.SingleOrDefault(x => x.VarietyId == varietyId);
+        }
+
+        public List<Variety> GetAllVarieties()
         {
             return _dbContext.Varieties.ToList();
         }
 
-        public Variety GetVarietyById(int id)
+        public bool CreateVariety(Variety variety)
         {
-            return _dbContext.Varieties.FirstOrDefault(v => v.VarietyId == id);
+            try
+            {
+                _dbContext.Varieties.Add(variety);
+                _dbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateVariety(Variety variety)
+        {
+            try
+            {
+                _dbContext.Varieties.Update(variety);
+                _dbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteVariety(int varietyId)
+        {
+            try
+            {
+                var variety = GetVarietyById(varietyId);
+                if (variety != null)
+                {
+                    _dbContext.Varieties.Remove(variety);
+                    _dbContext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

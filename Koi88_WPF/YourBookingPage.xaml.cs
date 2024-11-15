@@ -39,7 +39,7 @@ namespace Koi88_WPF
         private void YourBookingPage_OnLoaded(object sender, RoutedEventArgs e)
         {
 
-            DataGridYourBooking.ItemsSource = _bookingRepository.GetBookingsByAccountId(_accountId);
+            DataGridYourBooking.ItemsSource = _bookingRepository.GetCurrentBookingsByAccountId(_accountId);
             int count = 1;
             count++;
         }

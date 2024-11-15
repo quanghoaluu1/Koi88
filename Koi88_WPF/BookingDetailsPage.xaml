@@ -10,6 +10,9 @@
 
     <Grid Margin="20" Background="#f9f9f9">
         <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/25130bb2579bd7229b070f03e9230232.jpg"/>
+            </StackPanel.Background>
             <Button Name="ButtonBack" Content="Back" Click="ButtonBack_Click" Width="100" Margin="0,0,0,20" Background="#2196F3" Foreground="White"/>
             <TextBlock Text="Booking Details" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center"/>
 

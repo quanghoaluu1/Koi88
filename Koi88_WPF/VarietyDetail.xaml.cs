@@ -23,7 +23,7 @@ namespace Koi88_WPF
     public partial class VarietyDetail : Page
     {
         private int _varietyId;
-        private IVarietyService _varietyService;
+        private VarietyService _varietyService;
         public VarietyDetail(int varietyId)
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace Koi88_WPF
 
         private void VarietyDetail_OnLoaded(object sender, RoutedEventArgs e)
         {
-           Variety variety = _varietyService.GetVarietyById(_varietyId);
+           Variety variety = _varietyService.GetById(_varietyId);
            LabelTitle.Content = variety.VarietyName ;
            TextBlockDescription.Text = variety.Description;
            ImageTitle.Source = converToBitmapImage(variety.ImageUrl);

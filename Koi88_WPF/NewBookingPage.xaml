@@ -9,34 +9,49 @@
       Title="NewBookingPage" Background="White" Loaded="NewBookingPage_OnLoaded">
 
     <Grid>
-        <Label Name="LabelTitle" Content="Form Order" HorizontalAlignment="Center" Margin="0,-2,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/25130bb2579bd7229b070f03e9230232.jpg"/>
+        </Grid.Background>
+        <Label  x:Name="LabelTitle" Content="Form Order" HorizontalAlignment="Center" Margin="0,14,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" Foreground="#FF2648B1" Background="#FFA9B6D0" Width="276" Height="67"/>
 
         <!-- General Information  -->
-        <Label Content="General Information" HorizontalAlignment="Left" Margin="70,77,0,0" VerticalAlignment="Top" Width="224" FontSize="22" FontWeight="Bold"/>
+        <Label Content="General Information" HorizontalAlignment="Left" Margin="70,77,0,0" VerticalAlignment="Top" Width="224" FontSize="22" FontWeight="Bold" Foreground="#FF2648B1"/>
 
         <Label Content="Full Name" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxFullName" HorizontalAlignment="Left" Margin="10,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" RenderTransformOrigin="0.441,2.266"/>
+        <TextBox Name="TextBoxFullName" HorizontalAlignment="Left" Margin="10,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" RenderTransformOrigin="0.441,2.266" BorderBrush="#FF335ACE" Background="#FFCAE0EA"/>
 
         <Label Content="Phone Number" HorizontalAlignment="Left" Margin="216,117,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxPhoneNumber" HorizontalAlignment="Left" Margin="216,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" TextChanged="TextBoxPhoneNumber_TextChanged"/>
+        <TextBox Name="TextBoxPhoneNumber" HorizontalAlignment="Left" Margin="216,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" TextChanged="TextBoxPhoneNumber_TextChanged" BorderBrush="#FF2D57D0" Background="#FFCAE0EA"/>
         <TextBlock x:Name="TextBlockErrorPhoneNumber" HorizontalAlignment="Left" Margin="216,173,0,0" TextWrapping="Wrap" Visibility="Hidden" Foreground="Red" VerticalAlignment="Top"/>
 
         <Label Content="Email" HorizontalAlignment="Left" Margin="10,183,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxEmail" HorizontalAlignment="Left" Margin="10,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" TextChanged="TextBoxEmail_TextChanged"/>
+        <TextBox Name="TextBoxEmail" HorizontalAlignment="Left" Margin="10,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" TextChanged="TextBoxEmail_TextChanged" Background="#FFCAE0EA" BorderBrush="#FF2D50BB"/>
         <TextBlock Name="TextBlockErrorEmail" Visibility="Hidden" Foreground="Red" HorizontalAlignment="Left" Margin="10,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
         <Label Content="Gender" HorizontalAlignment="Left" Margin="216,183,0,0" VerticalAlignment="Top"/>
-        <ComboBox Name="ComboBoxGender" HorizontalAlignment="Left" Margin="216,209,0,0" VerticalAlignment="Top" Width="145" Height="30">
+        <ComboBox Name="ComboBoxGender" HorizontalAlignment="Left" Margin="216,209,0,0" VerticalAlignment="Top" Width="145" Height="30" Foreground="#FFCAE0EA" BorderBrush="#FF729CE0">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FFCAE4EF" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
             <ComboBoxItem Content="Male"/>
             <ComboBoxItem Content="Female"/>
             <ComboBoxItem Content="Other"/>
         </ComboBox>
 
         <!-- Trip Design Information -->
-        <Label Content="Trip Design Information" HorizontalAlignment="Left" Margin="478,77,0,0" VerticalAlignment="Top" Width="260" FontSize="22" FontWeight="Bold"/>
+        <Label  Content="Trip Design Information" HorizontalAlignment="Left" Margin="478,77,0,0" VerticalAlignment="Top" Width="260" FontSize="22" FontWeight="Bold" Foreground="#FF2648B1"/>
 
         <Label Content="Available Farms" HorizontalAlignment="Left" Margin="562,117,0,0" VerticalAlignment="Top"/>
         <ComboBox Name="ComboBoxAvailableFarm" HorizontalAlignment="Left" Margin="519,143,0,0" VerticalAlignment="Top" Width="179" Height="30" SelectionChanged="ComboBoxAvailableFarm_SelectionChanged">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FFCAE0EA" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
             <ComboBoxItem Content="Dainichi Koi Farm"/>
             <ComboBoxItem Content="Otsuka Koi Farm"/>
             <ComboBoxItem Content="Fukasawa Koi Farm"/>
@@ -48,10 +63,10 @@
         </ComboBox>
 
         <Label Content="Favourite Farm" HorizontalAlignment="Left" Margin="450,183,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxFavouriteFarm" HorizontalAlignment="Left" Margin="447,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="30"/>
+        <TextBox Name="TextBoxFavouriteFarm" HorizontalAlignment="Left" Margin="447,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="30" Background="#FFCAE0EA" BorderBrush="#FF375FD4"/>
 
         <Label Content="Favourite Breed" HorizontalAlignment="Left" Margin="633,183,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxFavouriteBreed" HorizontalAlignment="Left" Margin="630,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30"/>
+        <TextBox Name="TextBoxFavouriteBreed" HorizontalAlignment="Left" Margin="630,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" Background="#FFCAE0EA" BorderBrush="#FF2D54C8"/>
 
         <Label Content="Start Date" HorizontalAlignment="Left" Margin="450,252,0,0" VerticalAlignment="Top"/>
         <DatePicker Name="DatePickerStartDate" HorizontalAlignment="Left" Margin="447,274,0,0" VerticalAlignment="Top" Width="142" Height="30" SelectedDateChanged="DatePickerStartDate_OnSelectedDateChanged"/>
@@ -62,20 +77,19 @@
         <TextBlock Name="TextBlockErrorEnd" Foreground="Red" Visibility="Hidden" HorizontalAlignment="Left" Margin="608,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
         <Label Content="Estimate Cost" HorizontalAlignment="Left" Margin="450,318,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxEstimateCost" HorizontalAlignment="Left" Margin="447,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" TextChanged="TextBoxEstimateCost_TextChanged"/>
+        <TextBox Name="TextBoxEstimateCost" HorizontalAlignment="Left" Margin="447,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" TextChanged="TextBoxEstimateCost_TextChanged" BorderBrush="#FF3459C8" Background="#FFCAE0EA"/>
         <TextBlock Name="TextBlockErrorEstimateCost" HorizontalAlignment="Left" Margin="447,374,0,0" TextWrapping="Wrap" Visibility="Hidden" Foreground="Red" VerticalAlignment="Top"/>
 
         <Label Content="Hotel Accommodation" HorizontalAlignment="Left" Margin="633,318,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxHotelAccommodation" HorizontalAlignment="Left" Margin="630,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30"/>
+        <TextBox Name="TextBoxHotelAccommodation" HorizontalAlignment="Left" Margin="630,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30" Background="#FFCAE0EA" BorderBrush="#FF2449B5"/>
 
         <!-- Additional Information -->
-        <Label Content="Additional Information" HorizontalAlignment="Left" Margin="62,250,0,0" VerticalAlignment="Top" Width="257" FontSize="22" FontWeight="Bold"/>
-        <TextBox Name="TextBoxAdditionalInformation" HorizontalAlignment="Left" Margin="10,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Height="80"/>
+        <Label Content="Additional Information" HorizontalAlignment="Left" Margin="62,250,0,0" VerticalAlignment="Top" Width="257" FontSize="22" FontWeight="Bold" Foreground="#FF2648B1"/>
+        <TextBox Name="TextBoxAdditionalInformation" HorizontalAlignment="Left" Margin="10,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Height="80" SelectionTextBrush="#FFB13E3E" Background="#FFCAE0EA" BorderBrush="#FF3E5BB1"/>
+        <Button Name="ButtonReSubmit" Content="ReSubmit Order"  Visibility="Hidden" HorizontalAlignment="Left" Margin="371,439,0,0" VerticalAlignment="Top" Height="52" Width="142" Click="ButtonSubmit_OnClick" Background="#FF438DE0" FontFamily="Arial Black" FontSize="15" BorderBrush="#FF080707" />
+        <Button Name="ButtonSubmit" Content="Submit Order" Visibility="Visible" HorizontalAlignment="Left" Margin="371,382,0,0" VerticalAlignment="Top" Height="52" Width="142" Click="ButtonSubmit_OnClick" Background="#FF438DE0" FontFamily="Arial Black" FontSize="15" BorderBrush="#FF080707"/>
+        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click" Background="#FF2893F5" BorderBrush="#FF151313"/>
 
-        <Button Name="ButtonSubmit" Visibility="Visible" Content="Submit Order" HorizontalAlignment="Center" Margin="0,405,0,0" VerticalAlignment="Top" Height="52" Width="142" Click="ButtonSubmit_OnClick"/>
-        <Button Name="ButtonReSubmit" Visibility="Hidden" Content="Re-Submit Order" HorizontalAlignment="Center" Margin="0,405,0,0" VerticalAlignment="Top" Height="52" Width="142" Click="ButtonReSubmit_OnClick"/>
-        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click"/>
-        
 
     </Grid>
 </Page>

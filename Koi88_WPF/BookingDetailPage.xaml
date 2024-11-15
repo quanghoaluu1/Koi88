@@ -9,9 +9,12 @@
       Title="BookingDetailPage">
 
     <Grid>
-        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/25130bb2579bd7229b070f03e9230232.jpg"/>
+        </Grid.Background>
+        <Button Name="ButtonBack" Content="Go Back" HorizontalAlignment="Left" Margin="38,35,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="ButtonBack_Click" Background="#FF6396CE" BorderBrush="#FF100F0F"/>
 
-        <Label Content="Booking Detail" HorizontalAlignment="Center" Margin="0,3,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold"/>
+        <Label Content="Booking Detail" HorizontalAlignment="Center" Margin="0,3,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" Background="#FF538FD2"/>
         <Label Content="Customer Name" HorizontalAlignment="Left" Margin="32,85,0,0" VerticalAlignment="Top"/>
         <TextBox Name="TextBoxName" HorizontalAlignment="Left" Margin="133,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Height="22"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="38,116,0,0" VerticalAlignment="Top"/>
@@ -28,8 +31,8 @@
         <TextBox Name="TextBoxHotel" HorizontalAlignment="Left" Margin="559,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Height="22"/>
         <Label Content="Note" HorizontalAlignment="Left" Margin="449,209,0,0" VerticalAlignment="Top"/>
         <TextBox Name="TextBoxNote" HorizontalAlignment="Left" Margin="559,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Height="22"/>
-        <Button Name="ButtonCancel" Content="Cancel booking" HorizontalAlignment="Left" Margin="287,248,0,0" VerticalAlignment="Top" Height="35" Width="90"/>
-        <Button Name="ButtonEdit" Content="Edit booking" HorizontalAlignment="Left" Margin="424,248,0,0" VerticalAlignment="Top" Height="36" Width="86"/>
+        <Button Name="ButtonCancel" Content="Cancel booking" HorizontalAlignment="Left" Margin="287,248,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="#FFB76764" BorderBrush="Black"/>
+        <Button Name="ButtonEdit" Content="Edit booking" HorizontalAlignment="Left" Margin="424,248,0,0" VerticalAlignment="Top" Height="36" Width="86" BorderBrush="#FFBAC323" Background="#FFDCD052"/>
         <Label Content="Booking Date" HorizontalAlignment="Left" Margin="38,301,0,0" VerticalAlignment="Top"/>
         <Label Content="Start Date" HorizontalAlignment="Left" Margin="38,178,0,0" VerticalAlignment="Top"/>
         <DatePicker Name="DatePickerStart" HorizontalAlignment="Left" Margin="133,179,0,0" VerticalAlignment="Top" Width="181"/>

@@ -79,6 +79,8 @@ namespace Koi88_WPF
                TextBoxQuoteApproved.Text = booking.QuoteApprovedDate.ToString();
            }
 
+           disableAllFields();
+
            if (!canCancelStatus(booking.Status))
            {
                 ButtonCancel.IsEnabled = false;
@@ -101,6 +103,27 @@ namespace Koi88_WPF
         {
             return status != "Canceled" && status != "Confirmed" && status != "Checked in" && status != "Checked out" &&
                    status != "Delivering" && status != "Delivered";
+        }
+
+        private void disableAllFields()
+        {
+            TextBoxName.IsReadOnly = true;
+            TextBoxEmail.IsReadOnly = true;
+            TextBoxPhone.IsReadOnly = true;
+            DatePickerStart.IsEnabled = false;
+            DatePickerEnd.IsEnabled = false;
+            TextBoxFarm.IsReadOnly = true;
+            TextBoxKoi.IsReadOnly = true;
+            TextBoxNote.IsReadOnly = true;
+            TextBoxCost.IsReadOnly = true;
+            TextBoxHotel.IsReadOnly = true;
+            TextBoxBookingDate.IsReadOnly = true;
+            TextBoxStatus.IsReadOnly = true;
+            TextBoxQuoteAmount.IsReadOnly = true;
+            TextBoxQuoteSent.IsReadOnly = true;
+            TextBoxQuoteApproved.IsReadOnly = true;
+            TextBoxStatus.IsReadOnly = true;
+
         }
 
         private bool canEditStatus(string status)

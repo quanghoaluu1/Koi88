@@ -22,7 +22,7 @@ namespace Koi88_WPF
     /// </summary>
     public partial class VarietyPage : Page
     {
-        private IVarietyService _varietyService;
+        private VarietyService _varietyService;
         public VarietyPage()
         {
             InitializeComponent();
@@ -47,7 +47,7 @@ namespace Koi88_WPF
 
         private void VarietyPage_OnLoaded(object sender, RoutedEventArgs e)
         {
-            DataGridVariety.ItemsSource = _varietyService.GetVarieties();
+            DataGridVariety.ItemsSource = _varietyService.GetAll();
         }
 
         private void ButtonDetail_OnClick(object sender, RoutedEventArgs e)

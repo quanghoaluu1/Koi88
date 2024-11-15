@@ -54,5 +54,25 @@ namespace Koi88_Service
         {
             return _bookingRepository.GetBookingsNeedConsultant();
         }
+
+        public List<Booking> GetDeliveredBookingsByAccountId(int accountId)
+        {
+            return _bookingRepository.GetDeliveredBookingsByAccountId(accountId);
+        }
+
+        public List<Booking> GetDepositAndDeliveredBookingsByAccountId()
+        {
+            return _bookingRepository.GetDepositAndDeliveredBookingsByAccountId();
+        }
+
+        public List<Booking> GetCurrentBookingsByAccountId(int accountId)
+        {
+            return _bookingRepository.GetCurrentBookingsByAccountId(accountId);
+        }
+
+        public List<Booking> GetBookingsByStatus(string status)
+        {
+            return _bookingRepository.GetBookingsByStatus(status);
+        }
     }
 }

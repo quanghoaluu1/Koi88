@@ -5,12 +5,87 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Koi88_WPF"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800">
+        Title="Login" Height="350" Width="400" Background="#E9EEF3" 
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True" WindowStyle="None">
     <Grid>
-        <Label Content="username" HorizontalAlignment="Left" Margin="120,128,0,0" VerticalAlignment="Top"/>
-        <Label Content="password" HorizontalAlignment="Left" Margin="120,201,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxUsername" Text="manager" HorizontalAlignment="Left" Margin="216,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox Name="PasswordBoxPassword" Password="123"  HorizontalAlignment="Left" Margin="216,205,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Name="ButtonLogin" Content="Login" HorizontalAlignment="Left" Margin="216,260,0,0" VerticalAlignment="Top" Click="ButtonLogin_Click"/>
+        
+        <Grid.Background>
+        <ImageBrush ImageSource="/049e77ec538f96c4d797c47ca8405242.jpg"  Stretch="Fill" 
+          AlignmentX="Center" 
+          AlignmentY="Center"/>
+        </Grid.Background>
+
+        <Label Content="Username" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="90,123,0,0" 
+               FontSize="14" 
+               Foreground="#FF6874B7" FontFamily="Arial Black" />
+
+        <!-- Username TextBox -->
+        <TextBox Name="TextBoxUsername" 
+                 Text="trung" 
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Top" 
+                 Margin="90,154,0,0" 
+                 Width="216" 
+                 Height="30"
+                 FontSize="14" 
+                 Background="#FFFFFF" 
+                 BorderBrush="#FF101112" 
+                 Padding="5" />
+
+        <!-- Password Label -->
+        <Label Content="Password" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="90,189,0,0" 
+               FontSize="14" 
+               Foreground="#FF6874B7" FontFamily="Arial Black" />
+
+        <!-- Password Box -->
+        <PasswordBox Name="PasswordBoxPassword" 
+                     Password="123"  
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Top" 
+                     Width="216" 
+                     Height="30"
+                     FontSize="14" 
+                     Background="#FFFFFF" 
+                     BorderBrush="#FF121010" 
+                     Padding="5" Margin="0,223,0,0" />
+
+        <!-- Login Button -->
+        <Button Name="ButtonLogin" 
+                Content="Login" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Margin="132,268,0,0" 
+                Width="150" 
+                Height="35" 
+                Background="#FF366FE0" 
+                Foreground="#FF0B2F46" 
+                FontSize="16" 
+                BorderBrush="#FF444444"
+                BorderThickness="0" 
+                Click="ButtonLogin_Click"
+                Cursor="Hand" FontFamily="Arial Black" />
+        <Label Content="LOGIN " HorizontalAlignment="Left" Height="70" VerticalAlignment="Top"  Width="150" FontSize="60" FontWeight="Bold" FontFamily="Bernard MT Condensed" BorderBrush="#FFD81515" Margin="132,33,0,0">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF7EDDF5" Offset="0.494"/>
+                    <GradientStop Color="#FF011065" Offset="1"/>
+                    <GradientStop Color="#FFB6D7E0" Offset="0.944"/>
+                </LinearGradientBrush>
+            </Label.Background>
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF378FC7" Offset="0.427"/>
+                    <GradientStop Color="#FF3667E0" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Rectangle HorizontalAlignment="Left" Height="316" Opacity="0.99" Margin="66,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="282" Fill="#80FFFFFF" Panel.ZIndex="-2" RadiusX="20" RadiusY="20" />
     </Grid>
 </Window>

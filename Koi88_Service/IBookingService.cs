@@ -23,5 +23,14 @@ namespace Koi88_Service
         Booking GetBookingById(int bookingId);
 
         bool EditBooking(Booking booking);
+
+        List<Booking> GetDeliveredBookingsByAccountId(int accountId);
+
+        List<Booking> GetDepositAndDeliveredBookingsByAccountId();
+
+        List<Booking> GetCurrentBookingsByAccountId(int accountId);
+
+        List<Booking> GetBookingsByStatus(string status);
+
     }
 }

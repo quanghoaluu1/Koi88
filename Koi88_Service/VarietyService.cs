@@ -8,23 +8,38 @@ using Koi88_Repository;
 
 namespace Koi88_Service
 {
-    public class VarietyService: IVarietyService
+    public class VarietyService : ICRUDService<Variety>
     {
-        private IVarietyRepository varietyRepository;
+        private VarietyRepository _varietyRepository;
 
-        public VarietyService()
+        public VarietyService( )
         {
-            varietyRepository = new VarietyRepository();
+            _varietyRepository = new VarietyRepository();
         }
 
-        public List<Variety> GetVarieties()
+        public Variety GetById(int id)
         {
-            return varietyRepository.GetVarieties();
+            return _varietyRepository.GetById(id);
         }
 
-        public Variety GetVarietyById(int id)
+        public List<Variety> GetAll()
         {
-            return varietyRepository.GetVarietyById(id);
+            return _varietyRepository.GetAll();
+        }
+
+        public bool Create(Variety entity)
+        {
+            return _varietyRepository.Create(entity);
+        }
+
+        public bool Update(Variety entity)
+        {
+            return _varietyRepository.Update(entity);
+        }
+
+        public bool Delete(int id)
+        {
+            return _varietyRepository.Delete(id);
         }
     }
 }
