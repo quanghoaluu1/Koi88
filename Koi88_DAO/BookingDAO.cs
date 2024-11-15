@@ -49,6 +49,11 @@ namespace Koi88_DAO
             return _dbContext.Bookings.Include(b => b.PoId).Include(b => b.Trip).Where(b => b.Customer.AccountId == accountId).ToList();
         }
 
+        public List<Booking> GetCurrentBookingByAccountId(int accountId)
+        {
+            return _dbContext.Bookings.Include(b => b.Trip).Where(b => (b.Status == "Requested" || b.Status == "Accepted" || b.Status == "Confirmed") && b.Customer.AccountId.Equals(accountId)).ToList();
+        }
+
         public List<Booking> GetBookingsByConsultantId(int accountId)
         {
             return _dbContext.Bookings.Include(b => b.Trip).Where(b => b.Consultant.AccountId == accountId).ToList();

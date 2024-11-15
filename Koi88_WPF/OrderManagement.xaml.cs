@@ -11,11 +11,13 @@ namespace Koi88_WPF
     {
         private IOrderManagementService _orderManagementService;
         private IAccountService _accountService;
+        private Koi88Context _context;
         public OrderManagement()
         {
             InitializeComponent();
             _orderManagementService = new OrderManagementService();
             _accountService = new AccountService();
+            _context = new Koi88Context();
             LoadBookings();
             LoadConsultants();
 
@@ -142,6 +144,8 @@ namespace Koi88_WPF
                 if (result == MessageBoxResult.Yes)
                 {
                     booking.Status = "Accepted";
+                    _context.Update(booking);
+                    _context.SaveChanges();
                     // Update the booking in the database
                     // _orderManagementService.UpdateBooking(booking); // Uncomment this line if you have an update method
                     LoadBookings(); // Refresh the DataGrid
